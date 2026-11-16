@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maxime Vial — Portfolio</title>
+  <meta name="description" content="Portfolio of Maxime Vial, Createch engineering student at ESILV: hardware, radio frequencies, cybersecurity and biomaterials.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="spine" aria-hidden="true"></div>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <!-- ───────────── Masthead ───────────── -->
+  <header class="masthead">
+    <a class="masthead__name" href="#top">Maxime Vial</a>
+    <nav class="masthead__nav" aria-label="Main">
+      <a href="#index">Index</a>
+      <a href="#project-1">Work</a>
+      <a href="#notes">Field notes</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span class="masthead__meta">Portfolio — Vol. 01</span>
+  </header>
+
+  <main id="top">
+
+    <!-- ───────────── Hero ───────────── -->
+    <section class="hero">
+      <canvas id="field" class="hero__canvas" aria-hidden="true"></canvas>
+
+      <div class="hero__strip">
+        <span>Paris, France</span>
+        <span>Createch · ESILV</span>
+        <span>Edition 2026</span>
+      </div>
+
+      <h1 class="hero__title" aria-label="Maxime Vial">
+        <span class="hero__word hero__word--left"><span>Maxime</span></span>
+        <span class="hero__word hero__word--right"><span>Vial</span></span>
+      </h1>
+
+      <div class="hero__foot">
+        <p class="hero__lede" data-slide="left">
+          Engineering student working where <em>hardware</em>, <em>radio waves</em>
+          and <em>living materials</em> meet.
+        </p>
+        <div class="hero__aside" data-slide="right">
+          <p>
+            Four projects, from a mycelium wall panel grown in a 3D-printed mould
+            to a radio box built to listen to an entire spaceport.
+          </p>
+          <a class="hero__cue" href="#index">Scroll to read <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── Marquee ───────────── -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Hardware</span><i>✳</i><span>Radio frequency</span><i>✳</i><span>Cybersecurity</span><i>✳</i><span>Biomaterials</span><i>✳</i><span>Product design</span><i>✳</i>
+        <span>Hardware</span><i>✳</i><span>Radio frequency</span><i>✳</i><span>Cybersecurity</span><i>✳</i><span>Biomaterials</span><i>✳</i><span>Product design</span><i>✳</i>
+      </div>
+    </div>
+
+    <!-- ───────────── Index (horizontal cards) ───────────── -->
+    <section class="hscroll" id="index" aria-label="Project index">
+      <div class="hscroll__sticky">
+        <div class="hscroll__head">
+          <h2 class="kicker">Index — Selected work</h2>
+          <span class="kicker hscroll__hint">Keep scrolling →</span>
+        </div>
+        <div class="hscroll__track" id="track">
+
+          <a class="card" href="#project-1">
+            <span class="card__no">01</span>
+            <div class="card__visual card__visual--myc" aria-hidden="true">
+              <svg viewBox="0 0 200 200"><g fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M100 190V120M100 120C80 100 60 95 40 70M100 120C120 100 140 95 160 70M40 70C35 55 20 50 15 30M40 70C50 55 55 40 60 20M160 70C165 55 180 50 185 30M160 70C150 55 145 40 140 20M100 120C98 95 102 70 100 40M100 40C92 30 90 20 85 8M100 40C108 30 110 20 115 8"/>
+              </g></svg>
+            </div>
+            <h3 class="card__title">Mycelium <em>vs.</em> plasterboard</h3>
+            <p class="card__text">A lab study comparing a fungus-grown composite with the standard BA13 panel.</p>
+            <span class="card__tags">Research · Biomaterials</span>
+          </a>
+
+          <a class="card" href="#project-2">
+            <span class="card__no">02</span>
+            <div class="card__visual"><img src="assets/img/ecowitt-map.png" alt="" loading="lazy"></div>
+            <h3 class="card__title">Reading the <em>weather</em> by radio</h3>
+            <p class="card__text">Installing an Ecowitt multi-sensor station, then decoding its frames out of thin air.</p>
+            <span class="card__tags">Hardware · IoT · SDR</span>
+          </a>
+
+          <a class="card card--dark" href="#project-3">
+            <span class="card__no">03</span>
+            <div class="card__visual"><img src="assets/img/kit-schema.png" alt="" loading="lazy"></div>
+            <h3 class="card__title">Snake <em>Eye</em></h3>
+            <p class="card__text">A plug-and-play forensic radio box that maps Wi-Fi, Bluetooth LE and LoRaWAN at once.</p>
+            <span class="card__tags">Cybersecurity · RF · Linux</span>
+          </a>
+
+          <a class="card" href="#project-4">
+            <span class="card__no">04</span>
+            <div class="card__visual card__visual--cloud" aria-hidden="true"><span>135%</span></div>
+            <h3 class="card__title">Cloud<em>Caps</em></h3>
+            <p class="card__text">A bottle opener sculpted from upcycled cellulose acetate, funded on Kickstarter.</p>
+            <span class="card__tags">Product design · Upcycling</span>
+          </a>
+
+          <a class="card card--end" href="#contact">
+            <span class="card__no">→</span>
+            <h3 class="card__title">Say <em>hello</em></h3>
+            <p class="card__text">Open to conversations, collaborations and questions.</p>
+            <span class="card__tags">LinkedIn</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────── Project 01 ───────────── -->
+    <article class="spread" id="project-1">
+      <div class="page page--left">
+        <p class="kicker" data-slide="left">Project 01 — Research paper</p>
+        <h2 class="spread__title" data-slide="left">Can a mushroom replace a <em>plasterboard?</em></h2>
+        <p class="spread__lede" data-slide="left">
+          An experimental comparison of mycelium-based composites and the
+          standard BA13 gypsum panel: thermal insulation, fire and water.
+        </p>
+        <div class="prose" data-slide="left">
+          <p>
+            Plasterboard is the default interior wall: cheap, easy to fit, and
+            naturally non-combustible. It is also made of quarried gypsum
+            calcined at high temperature. Mycelium, the root network of fungi,
+            can instead digest agricultural waste and bind it into a light,
+            biodegradable solid.
+          </p>
+          <p>
+            Two formulations were grown for the study: <em>Pleurotus ostreatus</em>
+            on wood chips and <em>Ganoderma lucidum</em> on grain. Colonised
+            substrate was crumbled, packed into custom 3D-printed moulds,
+            incubated for a week, unmoulded to grow a protective fungal “skin”,
+            then dried for about six hours at 60&nbsp;°C to stop growth.
+          </p>
+        </div>
+        <ol class="steps" data-slide="left">
+          <li><span>1</span>Fragment</li>
+          <li><span>2</span>Mould &amp; incubate</li>
+          <li><span>3</span>Unmould, grow skin</li>
+          <li><span>4</span>Dry at 60 °C</li>
+        </ol>
+      </div>
+
+      <div class="page page--right">
+        <figure class="chart" data-slide="right">
+          <figcaption class="kicker">Fig. 1 — Fire test: temperature of the unexposed face (°C)</figcaption>
+          <svg id="fireChart" viewBox="0 0 560 320" role="img" aria-label="Line chart of the temperature behind each sample during and after 60 seconds of blowtorch exposure. Plasterboard peaks at 76.6 degrees, wood-chip mycelium stays under 45 degrees, grain mycelium peaks at 57 degrees and drops quickly."></svg>
+          <ul class="chart__legend">
+            <li><i style="--c:var(--ink)"></i>BA13 plasterboard</li>
+            <li><i style="--c:var(--accent)"></i>Mycelium on grain</li>
+            <li><i style="--c:var(--moss)"></i>Mycelium on wood chips</li>
+          </ul>
+        </figure>
+
+        <dl class="stats" data-slide="right">
+          <div><dt>Temperature gradient held</dt><dd><b data-count="19.2" data-dec="1">0</b> °C<small>vs 12.7 °C for BA13 (hot-box test)</small></dd></div>
+          <div><dt>Water uptake, grain formula</dt><dd><b data-count="18.7" data-dec="1">0</b> %<small>vs 40 % for BA13 — core stayed dry</small></dd></div>
+          <div><dt>BA13 peak after the flame</dt><dd><b data-count="76.6" data-dec="1">0</b> °C<small>gypsum stores heat, then radiates it</small></dd></div>
+        </dl>
+
+        <div class="prose" data-slide="right">
+          <p>
+            <strong>Verdict.</strong> Raw mycelium cannot yet replace BA13
+            everywhere — Euroclass fire ratings remain out of reach, and one
+            wood-chip sample kept burning. But the grain formulation insulated
+            better and resisted water better than plasterboard. Caveat noted in
+            the paper: the mycelium panels were 18&nbsp;mm thick against
+            12.5&nbsp;mm for BA13.
+          </p>
+          <a class="link" href="assets/docs/mycelium-vs-plasterboard.pdf" target="_blank" rel="noopener">Read the full paper (PDF) <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ───────────── Project 02 ───────────── -->
+    <article class="spread spread--flip" id="project-2">
+      <div class="page page--left">
+        <figure class="shot" data-slide="left">
+          <img src="assets/img/ecowitt-display.png" alt="Ecowitt live dashboard: outdoor and indoor temperature, solar, rainfall, wind, pressure and lightning tiles." loading="lazy">
+          <figcaption class="kicker">Fig. 2 — Live dashboard of the station at Campus Cyber</figcaption>
+        </figure>
+        <div class="shot-pair" data-slide="left">
+          <figure class="shot">
+            <img src="assets/img/ecowitt-graphs.png" alt="Weekly wind speed, gust and direction graphs." loading="lazy">
+            <figcaption class="kicker">Fig. 3 — One week of wind</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/img/ecowitt-map.png" alt="Map of Ecowitt stations and temperatures from the Caribbean to French Guiana." loading="lazy">
+            <figcaption class="kicker">Fig. 4 — Station network map</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="page page--right">
+        <p class="kicker" data-slide="right">Project 02 — Internship, Paris · Campus Cyber</p>
+        <h2 class="spread__title" data-slide="right">Reading the weather <em>by radio</em></h2>
+        <p class="spread__lede" data-slide="right">
+          Mounting, pairing and maintaining a multi-sensor Ecowitt weather
+          station — then intercepting its own radio frames with a USB dongle.
+        </p>
+        <div class="prose" data-slide="right">
+          <p>
+            One of the first assignments of my internship at Campus Cyber, in
+            La Défense: the full physical installation and network
+            configuration of a weather station, from mast alignment to
+            firmware updates.
+          </p>
+          <p>
+            The second half was the eye-opener. With an RTL-SDR key —
+            a software-defined radio receiver — we captured, visualised and
+            decoded the raw frames the sensors were broadcasting. Invisible
+            data streams are everywhere, and they can be read with the right
+            fundamentals and open-source tools.
+          </p>
+        </div>
+        <ul class="parts" data-slide="right">
+          <li>
+            <img src="assets/img/ecowitt-gateway.png" alt="Ecowitt GW1100 gateway" loading="lazy">
+            <div><b>GW1100</b><span>Wi-Fi gateway. Collects every sensor's RF signal; measures indoor temperature, humidity and pressure.</span></div>
+          </li>
+          <li>
+            <img src="assets/img/ecowitt-matrix.png" alt="Ecowitt WS90 sensor array" loading="lazy">
+            <div><b>WS90 “WittBoy”</b><span>Seven-in-one array: ultrasonic anemometer, haptic rain gauge, temperature, humidity, UV, light. Solar powered.</span></div>
+          </li>
+          <li>
+            <img src="assets/img/ecowitt-lightning.png" alt="Ecowitt WH57 lightning detector" loading="lazy">
+            <div><b>WH57</b><span>Lightning detector with a range of up to 40&nbsp;km — kept well away from motors and servers to avoid false positives.</span></div>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ───────────── Project 03 ───────────── -->
+    <article class="spread spread--dark" id="project-3">
+      <div class="page page--left">
+        <p class="kicker" data-slide="left">Project 03 — Internship, French Guiana · Guiana Space Centre</p>
+        <h2 class="spread__title" data-slide="left">Snake <em>Eye</em></h2>
+        <p class="spread__lede" data-slide="left">
+          A mobile, passive forensic radio box designed to map every wireless
+          network around a launch site.
+        </p>
+        <div class="prose" data-slide="left">
+          <p>
+            If a launch goes wrong, a spaceport has to be able to show that the
+            anomaly was not caused by an outside action on its radio
+            environment. Snake Eye is the collection kit imagined for that
+            job: one Linux “brain”, three radio modules, no soldering.
+          </p>
+          <p>
+            The starting point was an audit question: could someone within
+            radio range listen to the wireless intercoms used by ground crews?
+            From there the scope widened to three domains — Bluetooth LE,
+            private Wi-Fi and LoRaWAN — captured side by side and merged into
+            time-stamped <code>.pcap</code> files.
+          </p>
+        </div>
+        <div class="modes" data-slide="left">
+          <div>
+            <span class="kicker">Mode A</span>
+            <h3>Black box</h3>
+            <p>Boots, launches <code>tshark</code> on every radio interface and records to the SD card, fully offline. Analysis happens later, in the lab.</p>
+          </div>
+          <div>
+            <span class="kicker">Mode B</span>
+            <h3>Live stream</h3>
+            <p>One SSH command pipes all three captures in real time into Wireshark on the analyst's laptop.</p>
+          </div>
+        </div>
+        <p class="stack kicker" data-slide="left">Raspberry Pi OS Lite · rtl8814au (DKMS) · airmon-ng · nRF Sniffer · Python 3 · tshark · OpenSSH</p>
+      </div>
+
+      <div class="page page--right">
+        <figure class="shot shot--plain" data-slide="right">
+          <img src="assets/img/kit-schema.png" alt="Wiring diagram: a Raspberry Pi 5 connected over USB to an Alfa Wi-Fi adapter, a Nordic nRF52840 dongle and an RTL-SDR v4 key." loading="lazy">
+          <figcaption class="kicker">Fig. 5 — Hardware wiring of the box</figcaption>
+        </figure>
+        <ul class="bom" data-slide="right">
+          <li>
+            <img src="assets/img/raspberry-pi-5.jpg" alt="Raspberry Pi 5" loading="lazy">
+            <b>Raspberry Pi 5</b><span>The brain — powers, time-stamps, merges</span>
+          </li>
+          <li>
+            <img src="assets/img/alfa-awus1900.png" alt="Alfa AWUS1900 Wi-Fi adapter" loading="lazy">
+            <b>Alfa AWUS1900</b><span>Wi-Fi 2.4 / 5 GHz, monitor mode</span>
+          </li>
+          <li>
+            <img src="assets/img/nrf52840.jpg" alt="Nordic nRF52840 dongle" loading="lazy">
+            <b>nRF52840</b><span>Bluetooth LE sniffer, follows channel hops</span>
+          </li>
+          <li>
+            <img src="assets/img/rtl-sdr.jpg" alt="RTL-SDR v4 key" loading="lazy">
+            <b>RTL-SDR v4</b><span>LoRaWAN / IoT, 868 MHz antenna</span>
+          </li>
+        </ul>
+        <figure class="shot shot--light" data-slide="right">
+          <img src="assets/img/nordic-schema.png" alt="Diagram of the Bluetooth capture chain: nRF52840 with sniffer firmware, USB serial port, Python script, Wireshark extcap plugin." loading="lazy">
+          <figcaption class="kicker">Fig. 6 — Bluetooth LE capture chain into Wireshark</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <!-- ───────────── Project 04 ───────────── -->
+    <article class="spread" id="project-4">
+      <div class="page page--left">
+        <p class="kicker" data-slide="left">Project 04 — Product design · Kickstarter</p>
+        <h2 class="spread__title" data-slide="left">Cloud<em>Caps</em></h2>
+        <p class="spread__lede" data-slide="left">
+          A design-led bottle opener sculpted from upcycled cellulose acetate.
+        </p>
+        <div class="prose" data-slide="left">
+          <p>
+            Cellulose acetate is the tough, patterned material of high-end
+            eyewear. CloudCaps recovers offcuts of it from La Réserve des Arts
+            in Paris and CNC-machines them into bottle openers built to last.
+          </p>
+          <p>
+            Because the stock depends on what the fashion industry discards,
+            no two pieces match: tortoiseshell, confetti, marble or a deep
+            solid colour. Every backer opens a one-of-a-kind object.
+          </p>
+          <a class="link" href="https://www.kickstarter.com/projects/ps75/cloudcaps-bottle-opener-quickstarter" target="_blank" rel="noopener">See the Kickstarter campaign <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="page page--right page--center">
+        <div class="funded" data-slide="right">
+          <span class="kicker">Funded</span>
+          <p class="funded__big"><b data-count="135" data-dec="0">0</b><sup>%</sup></p>
+          <div class="funded__bar"><span></span></div>
+          <p class="funded__note">€338 pledged on a €250 goal</p>
+        </div>
+        <dl class="stats stats--row" data-slide="right">
+          <div><dt>Backers</dt><dd><b data-count="19" data-dec="0">0</b></dd></div>
+          <div><dt>Campaign</dt><dd><b data-count="20" data-dec="0">0</b> days<small>2 – 22 April 2026</small></dd></div>
+          <div><dt>Material</dt><dd class="stats__text">Upcycled acetate</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <!-- ───────────── Field notes ───────────── -->
+    <section class="notes" id="notes">
+      <div class="page page--left">
+        <p class="kicker" data-slide="left">Field notes</p>
+        <h2 class="spread__title" data-slide="left">Also, along <em>the way</em></h2>
+        <p class="spread__lede" data-slide="left">
+          The internship ran from Paris to French Guiana. A few things that
+          did not fit in a single project.
+        </p>
+      </div>
+      <div class="page page--right">
+        <ul class="notes__list">
+          <li data-slide="right">
+            <span class="kicker">Rennes · 2026</span>
+            <h3>BreizhCTF</h3>
+            <p>Helped run an exhibition stand presenting an open-source driver for the openpilot driver-assistance ecosystem, and why auditable code matters in cars.</p>
+          </li>
+          <li data-slide="right">
+            <span class="kicker">French Guiana</span>
+            <h3>Cyber &amp; AI, without a screen</h3>
+            <p>Designed low-tech classroom games: Caesar-disk “coded messages”, a human decision tree with local wildlife cards, a paper Capture-the-Flag and a crisis-cell role-play.</p>
+          </li>
+          <li data-slide="right">
+            <span class="kicker">Research</span>
+            <h3>One-way data</h3>
+            <p>Studied data-diode architectures — light can't travel backwards — and syslog aggregation for exporting logs from isolated networks.</p>
+          </li>
+          <li data-slide="right">
+            <span class="kicker">Paris</span>
+            <h3>Microdrones</h3>
+            <p>Learned to pilot them and to understand what keeps them up: flight controllers, speed controllers, radio telemetry.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ───────────── Contact ───────────── -->
+    <section class="contact" id="contact">
+      <p class="kicker">Contact</p>
+      <a class="contact__big" href="https://www.linkedin.com/in/maxime-vial-0b1971268/" target="_blank" rel="noopener">
+        <span>Let's</span> <em>talk</em> <span class="contact__arrow" aria-hidden="true">↗</span>
+      </a>
+      <p class="contact__sub">Find me on LinkedIn</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Maxime Vial</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
