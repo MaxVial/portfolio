@@ -19,9 +19,8 @@
   <header class="masthead">
     <a class="masthead__name" href="#top">Maxime Vial</a>
     <nav class="masthead__nav" aria-label="Main">
-      <a href="#index">Index</a>
-      <a href="#project-1">Work</a>
-      <a href="#notes">Field notes</a>
+      <a href="#projects">Projects</a>
+      <a href="#experiences">Experiences</a>
       <a href="#contact">Contact</a>
     </nav>
     <span class="masthead__meta">Portfolio — Vol. 01</span>
@@ -49,13 +48,7 @@
           Engineering student working where <em>hardware</em>, <em>radio waves</em>
           and <em>living materials</em> meet.
         </p>
-        <div class="hero__aside" data-slide="right">
-          <p>
-            Four projects, from a mycelium wall panel grown in a 3D-printed mould
-            to a radio box built to listen to an entire spaceport.
-          </p>
-          <a class="hero__cue" href="#index">Scroll to read <span aria-hidden="true">↓</span></a>
-        </div>
+        <a class="hero__cue" href="#projects" data-slide="right">See the projects <span aria-hidden="true">↓</span></a>
       </div>
     </section>
 
@@ -67,86 +60,158 @@
       </div>
     </div>
 
-    <!-- ───────────── Index (horizontal cards) ───────────── -->
-    <section class="hscroll" id="index" aria-label="Project index">
-      <div class="hscroll__sticky">
-        <div class="hscroll__head">
-          <h2 class="kicker">Index — Selected work</h2>
-          <span class="kicker hscroll__hint">Keep scrolling →</span>
+    <!-- ───────────── Projects ───────────── -->
+    <section class="projects" id="projects">
+      <header class="projects__head">
+        <h2 class="projects__title" data-slide="left">Projects</h2>
+        <p class="projects__count" data-slide="right"><b>04</b><span class="kicker">Selected works<br>Click a project to open it</span></p>
+      </header>
+
+      <article class="proj">
+        <button class="proj__visual proj__visual--myc" type="button" data-open="sheet-1" data-slide="left" aria-label="Open project 01: Mycelium vs. plasterboard">
+          <svg viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M100 190V120M100 120C80 100 60 95 40 70M100 120C120 100 140 95 160 70M40 70C35 55 20 50 15 30M40 70C50 55 55 40 60 20M160 70C165 55 180 50 185 30M160 70C150 55 145 40 140 20M100 120C98 95 102 70 100 40M100 40C92 30 90 20 85 8M100 40C108 30 110 20 115 8"/>
+          </g></svg>
+          <span class="proj__open">Open project +</span>
+        </button>
+        <div class="proj__body" data-slide="right">
+          <span class="proj__no">01</span>
+          <h3 class="proj__title">Mycelium <em>vs.</em> plasterboard</h3>
+          <p class="proj__text">A lab study comparing a fungus-grown composite with the standard BA13 panel: heat, fire and water.</p>
+          <span class="proj__tags">Research paper · Biomaterials</span>
         </div>
-        <div class="hscroll__track" id="track">
+      </article>
 
-          <a class="card" href="#project-1">
-            <span class="card__no">01</span>
-            <div class="card__visual card__visual--myc" aria-hidden="true">
-              <svg viewBox="0 0 200 200"><g fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M100 190V120M100 120C80 100 60 95 40 70M100 120C120 100 140 95 160 70M40 70C35 55 20 50 15 30M40 70C50 55 55 40 60 20M160 70C165 55 180 50 185 30M160 70C150 55 145 40 140 20M100 120C98 95 102 70 100 40M100 40C92 30 90 20 85 8M100 40C108 30 110 20 115 8"/>
-              </g></svg>
-            </div>
-            <h3 class="card__title">Mycelium <em>vs.</em> plasterboard</h3>
-            <p class="card__text">A lab study comparing a fungus-grown composite with the standard BA13 panel.</p>
-            <span class="card__tags">Research · Biomaterials</span>
-          </a>
-
-          <a class="card" href="#project-2">
-            <span class="card__no">02</span>
-            <div class="card__visual"><img src="assets/img/ecowitt-map.png" alt="" loading="lazy"></div>
-            <h3 class="card__title">Reading the <em>weather</em> by radio</h3>
-            <p class="card__text">Installing an Ecowitt multi-sensor station, then decoding its frames out of thin air.</p>
-            <span class="card__tags">Hardware · IoT · SDR</span>
-          </a>
-
-          <a class="card card--dark" href="#project-3">
-            <span class="card__no">03</span>
-            <div class="card__visual"><img src="assets/img/kit-schema.png" alt="" loading="lazy"></div>
-            <h3 class="card__title">Snake <em>Eye</em></h3>
-            <p class="card__text">A plug-and-play forensic radio box that maps Wi-Fi, Bluetooth LE and LoRaWAN at once.</p>
-            <span class="card__tags">Cybersecurity · RF · Linux</span>
-          </a>
-
-          <a class="card" href="#project-4">
-            <span class="card__no">04</span>
-            <div class="card__visual card__visual--cloud" aria-hidden="true"><span>135%</span></div>
-            <h3 class="card__title">Cloud<em>Caps</em></h3>
-            <p class="card__text">A bottle opener sculpted from upcycled cellulose acetate, funded on Kickstarter.</p>
-            <span class="card__tags">Product design · Upcycling</span>
-          </a>
-
-          <a class="card card--end" href="#contact">
-            <span class="card__no">→</span>
-            <h3 class="card__title">Say <em>hello</em></h3>
-            <p class="card__text">Open to conversations, collaborations and questions.</p>
-            <span class="card__tags">LinkedIn</span>
-          </a>
-
+      <article class="proj proj--flip">
+        <button class="proj__visual" type="button" data-open="sheet-2" data-slide="right" aria-label="Open project 02: Reading the weather by radio">
+          <img src="assets/img/ecowitt-map.png" alt="" loading="lazy">
+          <span class="proj__open">Open project +</span>
+        </button>
+        <div class="proj__body" data-slide="left">
+          <span class="proj__no">02</span>
+          <h3 class="proj__title">Reading the weather <em>by radio</em></h3>
+          <p class="proj__text">Installing an Ecowitt multi-sensor station, then decoding its frames out of thin air.</p>
+          <span class="proj__tags">Hardware · IoT · SDR</span>
         </div>
+      </article>
+
+      <article class="proj">
+        <button class="proj__visual proj__visual--dark" type="button" data-open="sheet-3" data-slide="left" aria-label="Open project 03: Snake Eye">
+          <img src="assets/img/kit-schema.png" alt="" loading="lazy">
+          <span class="proj__open">Open project +</span>
+        </button>
+        <div class="proj__body" data-slide="right">
+          <span class="proj__no">03</span>
+          <h3 class="proj__title">Snake <em>Eye</em></h3>
+          <p class="proj__text">A plug-and-play forensic radio box that maps Wi-Fi, Bluetooth LE and LoRaWAN at once.</p>
+          <span class="proj__tags">Cybersecurity · RF · Linux</span>
+        </div>
+      </article>
+
+      <article class="proj proj--flip">
+        <button class="proj__visual proj__visual--cloud" type="button" data-open="sheet-4" data-slide="right" aria-label="Open project 04: CloudCaps">
+          <span class="proj__figure" aria-hidden="true">135%</span>
+          <span class="proj__open">Open project +</span>
+        </button>
+        <div class="proj__body" data-slide="left">
+          <span class="proj__no">04</span>
+          <h3 class="proj__title">Cloud<em>Caps</em></h3>
+          <p class="proj__text">A bottle opener sculpted from upcycled cellulose acetate, funded on Kickstarter.</p>
+          <span class="proj__tags">Product design · Upcycling</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- ───────────── My experiences ───────────── -->
+    <section class="xp" id="experiences">
+      <div class="page page--left">
+        <p class="kicker" data-slide="left">Background</p>
+        <h2 class="spread__title" data-slide="left">My <em>experiences</em></h2>
+        <p class="spread__lede" data-slide="left">
+          From a cyber campus in Paris to Europe's spaceport in French Guiana.
+        </p>
+      </div>
+      <div class="page page--right">
+        <ul class="xp__list">
+          <li data-slide="right">
+            <span class="kicker">French Guiana · from June 2026</span>
+            <h3>Guiana Space Centre</h3>
+            <p>Deployed to Kourou for cybersecurity research around the spaceport: wireless audits, a forensic radio box, and one-way log retrieval with data diodes.</p>
+          </li>
+          <li data-slide="right">
+            <span class="kicker">French Guiana</span>
+            <h3>Working with cybersecurity experts</h3>
+            <p>The mission was framed with the space centre's cybersecurity expert around four axes: academic anchoring, digital inclusion, forensic tooling and the security of weather radio links.</p>
+          </li>
+          <li data-slide="right">
+            <span class="kicker">French Guiana · University &amp; schools</span>
+            <h3>Teaching cyber &amp; AI without a screen</h3>
+            <p>Designed low-tech classroom games for the ACAI project: Caesar-disk coded messages, a human decision tree, a paper Capture-the-Flag and a crisis-cell role-play.</p>
+          </li>
+          <li data-slide="right">
+            <span class="kicker">Paris · April – June 2026</span>
+            <h3>Campus Cyber</h3>
+            <p>Hands-on hardware foundations in La Défense: a multi-sensor weather station, microdrone piloting and mechanics, and radio decoding with software-defined radio.</p>
+          </li>
+          <li data-slide="right">
+            <span class="kicker">France</span>
+            <h3>IRSN — Test laboratory</h3>
+            <p>Experience in a test laboratory at IRSN.</p>
+          </li>
+          <li data-slide="right">
+            <span class="kicker">Rennes · 2026</span>
+            <h3>BreizhCTF</h3>
+            <p>Helped run an exhibition stand presenting an open-source driver for the openpilot driver-assistance ecosystem.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- ───────────── Project 01 ───────────── -->
-    <article class="spread" id="project-1">
+    <!-- ───────────── Contact ───────────── -->
+    <section class="contact" id="contact">
+      <p class="kicker">Contact</p>
+      <a class="contact__big" href="https://www.linkedin.com/in/maxime-vial-0b1971268/" target="_blank" rel="noopener">
+        <span>Let's</span> <em>talk</em> <span class="contact__arrow" aria-hidden="true">↗</span>
+      </a>
+      <p class="contact__sub">Find me on LinkedIn</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Maxime Vial</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <!-- ═════════════ Project sheets (open on click) ═════════════ -->
+
+  <!-- Project 01 -->
+  <dialog class="sheet" id="sheet-1" aria-labelledby="sheet-1-title">
+    <button class="sheet__close" type="button" data-close>Close ✕</button>
+    <article class="spread">
       <div class="page page--left">
         <p class="kicker" data-slide="left">Project 01 — Research paper</p>
-        <h2 class="spread__title" data-slide="left">Can a mushroom replace a <em>plasterboard?</em></h2>
+        <h2 class="spread__title" id="sheet-1-title" data-slide="left">Can a mushroom replace a <em>plasterboard?</em></h2>
         <p class="spread__lede" data-slide="left">
           An experimental comparison of mycelium-based composites and the
           standard BA13 gypsum panel: thermal insulation, fire and water.
         </p>
         <div class="prose" data-slide="left">
           <p>
-            Plasterboard is the default interior wall: cheap, easy to fit, and
-            naturally non-combustible. It is also made of quarried gypsum
-            calcined at high temperature. Mycelium, the root network of fungi,
-            can instead digest agricultural waste and bind it into a light,
-            biodegradable solid.
+            Two formulations were grown: <em>Pleurotus ostreatus</em> on wood
+            chips and <em>Ganoderma lucidum</em> on grain. Colonised substrate
+            was crumbled, packed into custom 3D-printed moulds, incubated for
+            a week, unmoulded to grow a protective fungal “skin”, then dried
+            for about six hours at 60&nbsp;°C.
           </p>
           <p>
-            Two formulations were grown for the study: <em>Pleurotus ostreatus</em>
-            on wood chips and <em>Ganoderma lucidum</em> on grain. Colonised
-            substrate was crumbled, packed into custom 3D-printed moulds,
-            incubated for a week, unmoulded to grow a protective fungal “skin”,
-            then dried for about six hours at 60&nbsp;°C to stop growth.
+            <strong>Verdict.</strong> Raw mycelium cannot yet replace BA13
+            everywhere — Euroclass fire ratings remain out of reach. But the
+            grain formulation insulated better and resisted water better than
+            plasterboard. Caveat: the mycelium panels were 18&nbsp;mm thick
+            against 12.5&nbsp;mm for BA13.
           </p>
+          <a class="link" href="https://github.com/MaxVial/portfolio/blob/main/assets/docs/mycelium-vs-plasterboard.pdf" target="_blank" rel="noopener">Read the research paper on GitHub (PDF) <span aria-hidden="true">↗</span></a>
         </div>
         <ol class="steps" data-slide="left">
           <li><span>1</span>Fragment</li>
@@ -172,63 +237,34 @@
           <div><dt>Water uptake, grain formula</dt><dd><b data-count="18.7" data-dec="1">0</b> %<small>vs 40 % for BA13 — core stayed dry</small></dd></div>
           <div><dt>BA13 peak after the flame</dt><dd><b data-count="76.6" data-dec="1">0</b> °C<small>gypsum stores heat, then radiates it</small></dd></div>
         </dl>
-
-        <div class="prose" data-slide="right">
-          <p>
-            <strong>Verdict.</strong> Raw mycelium cannot yet replace BA13
-            everywhere — Euroclass fire ratings remain out of reach, and one
-            wood-chip sample kept burning. But the grain formulation insulated
-            better and resisted water better than plasterboard. Caveat noted in
-            the paper: the mycelium panels were 18&nbsp;mm thick against
-            12.5&nbsp;mm for BA13.
-          </p>
-          <a class="link" href="assets/docs/mycelium-vs-plasterboard.pdf" target="_blank" rel="noopener">Read the full paper (PDF) <span aria-hidden="true">↗</span></a>
-        </div>
       </div>
     </article>
+  </dialog>
 
-    <!-- ───────────── Project 02 ───────────── -->
-    <article class="spread spread--flip" id="project-2">
+  <!-- Project 02 -->
+  <dialog class="sheet" id="sheet-2" aria-labelledby="sheet-2-title">
+    <button class="sheet__close" type="button" data-close>Close ✕</button>
+    <article class="spread">
       <div class="page page--left">
-        <figure class="shot" data-slide="left">
-          <img src="assets/img/ecowitt-display.png" alt="Ecowitt live dashboard: outdoor and indoor temperature, solar, rainfall, wind, pressure and lightning tiles." loading="lazy">
-          <figcaption class="kicker">Fig. 2 — Live dashboard of the station at Campus Cyber</figcaption>
-        </figure>
-        <div class="shot-pair" data-slide="left">
-          <figure class="shot">
-            <img src="assets/img/ecowitt-graphs.png" alt="Weekly wind speed, gust and direction graphs." loading="lazy">
-            <figcaption class="kicker">Fig. 3 — One week of wind</figcaption>
-          </figure>
-          <figure class="shot">
-            <img src="assets/img/ecowitt-map.png" alt="Map of Ecowitt stations and temperatures from the Caribbean to French Guiana." loading="lazy">
-            <figcaption class="kicker">Fig. 4 — Station network map</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="page page--right">
-        <p class="kicker" data-slide="right">Project 02 — Internship, Paris · Campus Cyber</p>
-        <h2 class="spread__title" data-slide="right">Reading the weather <em>by radio</em></h2>
-        <p class="spread__lede" data-slide="right">
+        <p class="kicker" data-slide="left">Project 02 — Internship, Paris · Campus Cyber</p>
+        <h2 class="spread__title" id="sheet-2-title" data-slide="left">Reading the weather <em>by radio</em></h2>
+        <p class="spread__lede" data-slide="left">
           Mounting, pairing and maintaining a multi-sensor Ecowitt weather
           station — then intercepting its own radio frames with a USB dongle.
         </p>
-        <div class="prose" data-slide="right">
+        <div class="prose" data-slide="left">
           <p>
-            One of the first assignments of my internship at Campus Cyber, in
-            La Défense: the full physical installation and network
-            configuration of a weather station, from mast alignment to
-            firmware updates.
+            One of the first assignments of my internship at Campus Cyber:
+            the full physical installation and network configuration of a
+            weather station, from mast alignment to firmware updates.
           </p>
           <p>
-            The second half was the eye-opener. With an RTL-SDR key —
-            a software-defined radio receiver — we captured, visualised and
-            decoded the raw frames the sensors were broadcasting. Invisible
-            data streams are everywhere, and they can be read with the right
-            fundamentals and open-source tools.
+            Then, with an RTL-SDR key — a software-defined radio receiver —
+            we captured, visualised and decoded the raw frames the sensors
+            were broadcasting.
           </p>
         </div>
-        <ul class="parts" data-slide="right">
+        <ul class="parts" data-slide="left">
           <li>
             <img src="assets/img/ecowitt-gateway.png" alt="Ecowitt GW1100 gateway" loading="lazy">
             <div><b>GW1100</b><span>Wi-Fi gateway. Collects every sensor's RF signal; measures indoor temperature, humidity and pressure.</span></div>
@@ -239,17 +275,35 @@
           </li>
           <li>
             <img src="assets/img/ecowitt-lightning.png" alt="Ecowitt WH57 lightning detector" loading="lazy">
-            <div><b>WH57</b><span>Lightning detector with a range of up to 40&nbsp;km — kept well away from motors and servers to avoid false positives.</span></div>
+            <div><b>WH57</b><span>Lightning detector with a range of up to 40&nbsp;km.</span></div>
           </li>
         </ul>
       </div>
-    </article>
 
-    <!-- ───────────── Project 03 ───────────── -->
-    <article class="spread spread--dark" id="project-3">
+      <div class="page page--right">
+        <figure class="shot" data-slide="right">
+          <img src="assets/img/ecowitt-display.png" alt="Ecowitt live dashboard: outdoor and indoor temperature, solar, rainfall, wind, pressure and lightning tiles." loading="lazy">
+          <figcaption class="kicker">Fig. 2 — Live dashboard of the station at Campus Cyber</figcaption>
+        </figure>
+        <figure class="shot" data-slide="right">
+          <img src="assets/img/ecowitt-graphs.png" alt="Weekly wind speed, gust and direction graphs." loading="lazy">
+          <figcaption class="kicker">Fig. 3 — One week of wind</figcaption>
+        </figure>
+        <figure class="shot" data-slide="right">
+          <img src="assets/img/ecowitt-map.png" alt="Map of Ecowitt stations and temperatures from the Caribbean to French Guiana." loading="lazy">
+          <figcaption class="kicker">Fig. 4 — Station network map</figcaption>
+        </figure>
+      </div>
+    </article>
+  </dialog>
+
+  <!-- Project 03 -->
+  <dialog class="sheet sheet--dark" id="sheet-3" aria-labelledby="sheet-3-title">
+    <button class="sheet__close" type="button" data-close>Close ✕</button>
+    <article class="spread spread--dark">
       <div class="page page--left">
         <p class="kicker" data-slide="left">Project 03 — Internship, French Guiana · Guiana Space Centre</p>
-        <h2 class="spread__title" data-slide="left">Snake <em>Eye</em></h2>
+        <h2 class="spread__title" id="sheet-3-title" data-slide="left">Snake <em>Eye</em></h2>
         <p class="spread__lede" data-slide="left">
           A mobile, passive forensic radio box designed to map every wireless
           network around a launch site.
@@ -262,18 +316,16 @@
             job: one Linux “brain”, three radio modules, no soldering.
           </p>
           <p>
-            The starting point was an audit question: could someone within
-            radio range listen to the wireless intercoms used by ground crews?
-            From there the scope widened to three domains — Bluetooth LE,
-            private Wi-Fi and LoRaWAN — captured side by side and merged into
-            time-stamped <code>.pcap</code> files.
+            Three domains — Bluetooth LE, private Wi-Fi and LoRaWAN — are
+            captured side by side and merged into time-stamped
+            <code>.pcap</code> files.
           </p>
         </div>
         <div class="modes" data-slide="left">
           <div>
             <span class="kicker">Mode A</span>
             <h3>Black box</h3>
-            <p>Boots, launches <code>tshark</code> on every radio interface and records to the SD card, fully offline. Analysis happens later, in the lab.</p>
+            <p>Boots, launches <code>tshark</code> on every radio interface and records to the SD card, fully offline.</p>
           </div>
           <div>
             <span class="kicker">Mode B</span>
@@ -313,12 +365,15 @@
         </figure>
       </div>
     </article>
+  </dialog>
 
-    <!-- ───────────── Project 04 ───────────── -->
-    <article class="spread" id="project-4">
+  <!-- Project 04 -->
+  <dialog class="sheet" id="sheet-4" aria-labelledby="sheet-4-title">
+    <button class="sheet__close" type="button" data-close>Close ✕</button>
+    <article class="spread">
       <div class="page page--left">
         <p class="kicker" data-slide="left">Project 04 — Product design · Kickstarter</p>
-        <h2 class="spread__title" data-slide="left">Cloud<em>Caps</em></h2>
+        <h2 class="spread__title" id="sheet-4-title" data-slide="left">Cloud<em>Caps</em></h2>
         <p class="spread__lede" data-slide="left">
           A design-led bottle opener sculpted from upcycled cellulose acetate.
         </p>
@@ -330,8 +385,7 @@
           </p>
           <p>
             Because the stock depends on what the fashion industry discards,
-            no two pieces match: tortoiseshell, confetti, marble or a deep
-            solid colour. Every backer opens a one-of-a-kind object.
+            no two pieces match: every backer opens a one-of-a-kind object.
           </p>
           <a class="link" href="https://www.kickstarter.com/projects/ps75/cloudcaps-bottle-opener-quickstarter" target="_blank" rel="noopener">See the Kickstarter campaign <span aria-hidden="true">↗</span></a>
         </div>
@@ -351,58 +405,7 @@
         </dl>
       </div>
     </article>
-
-    <!-- ───────────── Field notes ───────────── -->
-    <section class="notes" id="notes">
-      <div class="page page--left">
-        <p class="kicker" data-slide="left">Field notes</p>
-        <h2 class="spread__title" data-slide="left">Also, along <em>the way</em></h2>
-        <p class="spread__lede" data-slide="left">
-          The internship ran from Paris to French Guiana. A few things that
-          did not fit in a single project.
-        </p>
-      </div>
-      <div class="page page--right">
-        <ul class="notes__list">
-          <li data-slide="right">
-            <span class="kicker">Rennes · 2026</span>
-            <h3>BreizhCTF</h3>
-            <p>Helped run an exhibition stand presenting an open-source driver for the openpilot driver-assistance ecosystem, and why auditable code matters in cars.</p>
-          </li>
-          <li data-slide="right">
-            <span class="kicker">French Guiana</span>
-            <h3>Cyber &amp; AI, without a screen</h3>
-            <p>Designed low-tech classroom games: Caesar-disk “coded messages”, a human decision tree with local wildlife cards, a paper Capture-the-Flag and a crisis-cell role-play.</p>
-          </li>
-          <li data-slide="right">
-            <span class="kicker">Research</span>
-            <h3>One-way data</h3>
-            <p>Studied data-diode architectures — light can't travel backwards — and syslog aggregation for exporting logs from isolated networks.</p>
-          </li>
-          <li data-slide="right">
-            <span class="kicker">Paris</span>
-            <h3>Microdrones</h3>
-            <p>Learned to pilot them and to understand what keeps them up: flight controllers, speed controllers, radio telemetry.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ───────────── Contact ───────────── -->
-    <section class="contact" id="contact">
-      <p class="kicker">Contact</p>
-      <a class="contact__big" href="https://www.linkedin.com/in/maxime-vial-0b1971268/" target="_blank" rel="noopener">
-        <span>Let's</span> <em>talk</em> <span class="contact__arrow" aria-hidden="true">↗</span>
-      </a>
-      <p class="contact__sub">Find me on LinkedIn</p>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <span>© 2026 Maxime Vial</span>
-    <a href="#top">Back to top ↑</a>
-  </footer>
+  </dialog>
 
   <script src="main.js"></script>
 </body>

@@ -1,8 +1,8 @@
 /* Maxime Vial — Portfolio
    Vanilla JS, no dependencies.
    1. Hero "signal field" canvas
-   2. Horizontal card index driven by vertical scroll
-   3. Side-slide reveals + number counters
+   2. Scroll progress bar
+   3. Side-slide reveals, counters, project sheets
    4. Fire-test chart (data from the mycelium paper)
 */
 (() => {
@@ -11,7 +11,6 @@
   const root = document.documentElement;
   root.classList.add("js");
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const isNarrow = () => matchMedia("(max-width: 860px)").matches;
 
   requestAnimationFrame(() => root.classList.add("is-ready"));
 
@@ -81,30 +80,8 @@
     if (reduceMotion) draw(0); else requestAnimationFrame(loop);
   }
 
-  /* ───────── 2. Horizontal index ─────────
-     The section is made taller than the viewport; while it is pinned,
-     vertical progress is mapped to a leftward translate of the cards. */
-  const hscroll = document.querySelector(".hscroll");
-  const track = document.getElementById("track");
+  /* ───────── 2. Scroll progress bar ───────── */
   const bar = document.getElementById("progressBar");
-  let travel = 0;
-
-  const measure = () => {
-    if (!hscroll || !track) return;
-    if (isNarrow() || reduceMotion) {
-      hscroll.style.height = "";
-      track.style.transform = "";
-      travel = 0;
-      if (reduceMotion && !isNarrow()) {
-        track.style.width = "auto";
-        track.style.overflowX = "auto";
-      }
-      return;
-    }
-    travel = Math.max(0, track.scrollWidth - window.innerWidth);
-    hscroll.style.height = `${window.innerHeight + travel}px`;
-  };
-
   let ticking = false;
   const onScroll = () => {
     if (ticking) return;
@@ -113,21 +90,12 @@
       ticking = false;
       const max = document.documentElement.scrollHeight - window.innerHeight;
       if (bar) bar.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
-      if (travel > 0) {
-        const top = hscroll.getBoundingClientRect().top;
-        const p = Math.min(1, Math.max(0, -top / travel));
-        track.style.transform = `translate3d(${-p * travel}px,0,0)`;
-      }
     });
   };
-
   window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", () => { measure(); onScroll(); });
-  window.addEventListener("load", () => { measure(); onScroll(); });
-  measure();
   onScroll();
 
-  /* ───────── 3. Reveals + counters ───────── */
+  /* ───────── 3. Reveals, counters, project sheets ───────── */
   const countUp = (el) => {
     const target = parseFloat(el.dataset.count);
     const dec = parseInt(el.dataset.dec || "0", 10);
@@ -142,13 +110,17 @@
     requestAnimationFrame(step);
   };
 
+  const reveal = (el) => {
+    el.classList.add("is-in");
+    el.querySelectorAll("[data-count]").forEach(countUp);
+  };
+
+  // Page content slides in from its side as it scrolls into view.
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-      const el = entry.target;
-      el.classList.add("is-in");
-      el.querySelectorAll("[data-count]").forEach(countUp);
-      io.unobserve(el);
+      reveal(entry.target);
+      io.unobserve(entry.target);
     });
   }, { threshold: 0.18 });
 
@@ -158,7 +130,28 @@
       el.style.setProperty("--d", `${Math.min(i, 5) * 0.09}s`);
     });
   });
-  document.querySelectorAll("[data-slide]").forEach((el) => io.observe(el));
+  document.querySelectorAll("main [data-slide]").forEach((el) => io.observe(el));
+
+  // Each project opens in a full-screen sheet; its content animates on open.
+  let chartBuilt = false;
+  document.querySelectorAll("[data-open]").forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const sheet = document.getElementById(trigger.dataset.open);
+      if (!sheet) return;
+      sheet.showModal();
+      sheet.scrollTop = 0;
+      root.classList.add("is-locked");
+      if (!chartBuilt && sheet.querySelector("#fireChart")) { buildChart(); chartBuilt = true; }
+      setTimeout(() => sheet.querySelectorAll("[data-slide]").forEach(reveal), 60);
+    });
+  });
+  document.querySelectorAll(".sheet").forEach((sheet) => {
+    sheet.querySelector("[data-close]").addEventListener("click", () => sheet.close());
+    sheet.addEventListener("close", () => {
+      root.classList.remove("is-locked");
+      sheet.querySelectorAll("[data-slide]").forEach((el) => el.classList.remove("is-in"));
+    });
+  });
 
   /* ───────── 4. Fire-test chart ─────────
      Temperature (°C) on the unexposed face, one reading every 3 s.
@@ -169,8 +162,8 @@
     grain: [18.5, 19, 22, 22.7, 23, 23.2, 23.3, 24, 24.1, 25, 30, 33.6, 35, 39, 41.8, 41.9, 42.6, 47.2, 52, 56.1, 57, 54.4, 48.2, 33.9, 28, 26.2, 25.9, 25, 23.6, 22.8, 22.5],
   };
 
-  const svg = document.getElementById("fireChart");
-  if (svg) {
+  function buildChart() {
+    const svg = document.getElementById("fireChart");
     const NS = "http://www.w3.org/2000/svg";
     const W = 560, H = 320, m = { l: 34, r: 14, t: 16, b: 30 };
     const tMax = 180, yMin = 10, yMax = 80;
