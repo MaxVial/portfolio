@@ -1,6 +1,6 @@
 /* Maxime Vial — Portfolio
    Vanilla JS, no dependencies.
-   1. Hero "signal field" canvas
+   1. Hero canvas: mycelium network x radio waves
    2. Scroll progress bar
    3. Side-slide reveals, counters, project sheets
    4. Fire-test chart (data from the mycelium paper)
@@ -14,69 +14,197 @@
 
   requestAnimationFrame(() => root.classList.add("is-ready"));
 
-  /* ───────── 1. Hero signal field ─────────
-     A grid of dots displaced by waves radiating from the pointer,
-     like a radio source moving over the page. */
+  /* ───────── 1. Hero: mycelium × radio ─────────
+     A network of hyphae grows across the hero and leans toward the pointer.
+     The pointer is also a transmitter: it emits rings that light up the
+     nodes they cross, and it shapes a waveform running behind the name.
+     Move to attract growth, click to plant a spore. */
   const canvas = document.getElementById("field");
   if (canvas) {
     const ctx = canvas.getContext("2d");
     const hero = canvas.parentElement;
-    let w = 0, h = 0, dpr = 1, cols = 0, rows = 0, gap = 26;
-    const src = { x: 0.5, y: 0.45, tx: 0.5, ty: 0.45 };
-    let visible = true;
+    const net = document.createElement("canvas"); // hyphae are painted once, then kept
+    const nctx = net.getContext("2d");
+    const MAX_TIPS = 170, MAX_NODES = 420;
+    const rand = Math.random;
+    let w = 0, h = 0, dpr = 1, frame = 0, visible = true;
+    let tips = [], nodes = [], rings = [];
+    const ptr = { x: 0, y: 0, sx: 0, active: false, lastSpawn: 0, lastRing: 0, boost: 0 };
 
-    const resize = () => {
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = hero.clientWidth;
-      h = hero.clientHeight;
-      canvas.width = w * dpr;
-      canvas.height = h * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      gap = w < 700 ? 20 : 26;
-      cols = Math.ceil(w / gap) + 1;
-      rows = Math.ceil(h / gap) + 1;
+    const addTip = (x, y, a, life, wd, gen) => {
+      if (tips.length < MAX_TIPS) tips.push({ x, y, a, life, wd, gen });
+    };
+    const addNode = (x, y) => {
+      nodes.push({ x, y, r: 0.9 + rand() * 1.5, ph: rand() * 6.28, hit: 0, age: 0 });
+      if (nodes.length > MAX_NODES) nodes.shift();
+    };
+    const spore = (x, y, n) => {
+      for (let i = 0; i < n; i++) addTip(x, y, (i / n) * 6.28 + rand() * 0.6, 150 + rand() * 200, 1.7, 0);
+    };
+    const edgeSeed = () => {
+      const side = Math.floor(rand() * 4);
+      const x = side === 1 ? w + 5 : side === 3 ? -5 : rand() * w;
+      const y = side === 0 ? -5 : side === 2 ? h + 5 : rand() * h;
+      const a = Math.atan2(h / 2 - y, w / 2 - x) + (rand() - 0.5) * 1.2;
+      addTip(x, y, a, 260 + rand() * 240, 1.9, 0);
     };
 
-    const draw = (t) => {
-      ctx.clearRect(0, 0, w, h);
-      src.x += (src.tx - src.x) * 0.05;
-      src.y += (src.ty - src.y) * 0.05;
-      const sx = src.x * w, sy = src.y * h;
-      const time = t * 0.0022;
-
-      for (let j = 0; j < rows; j++) {
-        for (let i = 0; i < cols; i++) {
-          const x = i * gap, y = j * gap;
-          const dx = x - sx, dy = y - sy;
-          const dist = Math.hypot(dx, dy) || 1;
-          const wave = Math.sin(dist * 0.035 - time * 2.2);
-          const fall = Math.max(0, 1 - dist / (Math.max(w, h) * 0.75));
-          const push = wave * 7 * fall;
-          const px = x + (dx / dist) * push;
-          const py = y + (dy / dist) * push;
-          const r = 0.7 + (wave + 1) * 1.1 * fall;
-          const hot = wave > 0.86 && fall > 0.35;
-          ctx.fillStyle = hot ? "rgba(226,64,28,0.9)" : `rgba(21,19,15,${0.1 + fall * 0.28})`;
-          ctx.beginPath();
-          ctx.arc(px, py, r, 0, 6.2832);
-          ctx.fill();
+    const grow = () => {
+      nctx.lineCap = "round";
+      for (let i = tips.length - 1; i >= 0; i--) {
+        const t = tips[i];
+        const px = t.x, py = t.y;
+        t.a += (rand() - 0.5) * 0.46;
+        if (ptr.active) { // tropism: bend gently toward the transmitter
+          const dx = ptr.x - t.x, dy = ptr.y - t.y;
+          if (dx * dx + dy * dy < 90000) {
+            let d = Math.atan2(dy, dx) - t.a;
+            d = Math.atan2(Math.sin(d), Math.cos(d));
+            t.a += d * 0.03;
+          }
         }
+        t.x += Math.cos(t.a) * 1.5;
+        t.y += Math.sin(t.a) * 1.5;
+        t.life--;
+        nctx.strokeStyle = `rgba(160,200,150,${0.2 + t.wd * 0.16})`;
+        nctx.lineWidth = t.wd;
+        nctx.beginPath(); nctx.moveTo(px, py); nctx.lineTo(t.x, t.y); nctx.stroke();
+
+        if (rand() < 0.02 && t.gen < 5) {
+          const turn = (0.45 + rand() * 0.7) * (rand() < 0.5 ? -1 : 1);
+          addTip(t.x, t.y, t.a + turn, t.life * 0.8, Math.max(0.5, t.wd * 0.72), t.gen + 1);
+          if (rand() < 0.55) addNode(t.x, t.y);
+        }
+        const out = t.x < -30 || t.x > w + 30 || t.y < -30 || t.y > h + 30;
+        if (t.life <= 0 || out) {
+          if (!out && rand() < 0.6) addNode(t.x, t.y);
+          tips.splice(i, 1);
+        }
+      }
+      if (tips.length < 16) edgeSeed();
+      // Let old growth sink back into the soil, a little at a time.
+      if (frame % 150 === 0) {
+        nctx.save();
+        nctx.setTransform(1, 0, 0, 1, 0, 0);
+        nctx.globalCompositeOperation = "destination-out";
+        nctx.fillStyle = "rgba(0,0,0,0.09)";
+        nctx.fillRect(0, 0, net.width, net.height);
+        nctx.restore();
       }
     };
 
+    const emit = (x, y, strong) => rings.push({ x, y, r: 4, max: strong ? Math.max(w, h) * 0.7 : 260, strong });
+
+    const draw = (time) => {
+      ctx.clearRect(0, 0, w, h);
+      ctx.drawImage(net, 0, 0, w, h);
+
+      // Waveform behind the name; its envelope follows the pointer.
+      const yc = h * 0.5;
+      ptr.sx += ((ptr.active ? ptr.x : w / 2) - ptr.sx) * 0.06;
+      ptr.boost *= 0.96;
+      ctx.lineWidth = 1;
+      for (let k = 0; k < 5; k++) {
+        const amp = (h * 0.13 + ptr.boost * 70) * (1 - k * 0.14);
+        ctx.strokeStyle = `rgba(214,158,96,${0.42 - k * 0.05})`;
+        ctx.beginPath();
+        for (let x = 0; x <= w; x += 6) {
+          const e = (x - ptr.sx) / (w * 0.24);
+          const env = 0.12 + 0.88 * Math.exp(-e * e);
+          const y = yc + Math.sin(x * 0.018 * (1 + k * 0.3) + time * (1.3 + k * 0.35) + k)
+            * Math.cos(x * 0.004 - time * 0.45) * amp * env;
+          if (x) ctx.lineTo(x, y); else ctx.moveTo(x, y);
+        }
+        ctx.stroke();
+      }
+
+      // Rings travelling outward from the transmitter.
+      for (let i = rings.length - 1; i >= 0; i--) {
+        const g = rings[i];
+        g.r += g.strong ? 4.2 : 2.4;
+        const f = 1 - g.r / g.max;
+        if (f <= 0) { rings.splice(i, 1); continue; }
+        ctx.strokeStyle = `rgba(214,158,96,${(g.strong ? 0.6 : 0.34) * f})`;
+        ctx.lineWidth = g.strong ? 1.6 : 1;
+        ctx.beginPath(); ctx.arc(g.x, g.y, g.r, 0, 6.2832); ctx.stroke();
+        for (const n of nodes) {
+          if (Math.abs(Math.hypot(n.x - g.x, n.y - g.y) - g.r) < 6) n.hit = 1;
+        }
+      }
+
+      // Glowing nodes: they breathe, and flare when a ring crosses them.
+      for (let i = nodes.length - 1; i >= 0; i--) {
+        const n = nodes[i];
+        n.age++;
+        if (n.age > 2400) { nodes.splice(i, 1); continue; }
+        n.hit *= 0.955;
+        const fade = Math.min(1, n.age / 40) * Math.min(1, (2400 - n.age) / 500);
+        const pulse = 0.5 + 0.5 * Math.sin(time * 1.8 + n.ph);
+        const a = fade * (0.35 + 0.4 * pulse + 0.5 * n.hit);
+        ctx.fillStyle = `rgba(198,238,108,${Math.min(0.22, a * 0.14 + n.hit * 0.1)})`;
+        ctx.beginPath(); ctx.arc(n.x, n.y, n.r * (4 + n.hit * 3.5), 0, 6.2832); ctx.fill();
+        ctx.fillStyle = `rgba(214,246,140,${Math.min(1, a)})`;
+        ctx.beginPath(); ctx.arc(n.x, n.y, n.r * (1 + n.hit * 0.9), 0, 6.2832); ctx.fill();
+      }
+    };
+
+    const reset = () => {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = hero.clientWidth; h = hero.clientHeight;
+      for (const c of [canvas, net]) { c.width = w * dpr; c.height = h * dpr; }
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      nctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      tips = []; nodes = []; rings = [];
+      ptr.sx = w / 2;
+      const seeds = w < 700 ? 5 : 9;
+      for (let i = 0; i < seeds; i++) edgeSeed();
+      spore(w * 0.5, h * 0.5, 5);
+      for (let i = 0; i < (reduceMotion ? 520 : 150); i++) { frame++; grow(); } // start already alive
+    };
+
     const loop = (t) => {
-      if (visible) draw(t);
+      if (visible) {
+        frame++;
+        grow();
+        if (t - ptr.lastRing > (ptr.active ? 1500 : 3200)) {
+          ptr.lastRing = t;
+          if (ptr.active) emit(ptr.x, ptr.y, false);
+          else emit(w * (0.2 + rand() * 0.6), h * (0.25 + rand() * 0.5), false);
+        }
+        draw(t * 0.001);
+      }
       requestAnimationFrame(loop);
     };
 
-    hero.addEventListener("pointermove", (e) => {
+    const place = (e) => {
       const b = hero.getBoundingClientRect();
-      src.tx = (e.clientX - b.left) / b.width;
-      src.ty = (e.clientY - b.top) / b.height;
+      ptr.x = e.clientX - b.left; ptr.y = e.clientY - b.top; ptr.active = true;
+    };
+    hero.addEventListener("pointermove", (e) => {
+      place(e);
+      const now = performance.now();
+      if (now - ptr.lastSpawn > 240) { // growth follows the hand
+        ptr.lastSpawn = now;
+        addTip(ptr.x, ptr.y, rand() * 6.28, 90 + rand() * 120, 1.3, 1);
+      }
     });
+    hero.addEventListener("pointerdown", (e) => {
+      place(e);
+      spore(ptr.x, ptr.y, 8);
+      addNode(ptr.x, ptr.y);
+      emit(ptr.x, ptr.y, true);
+      ptr.boost = 1;
+    });
+    hero.addEventListener("pointerleave", () => { ptr.active = false; });
     new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(hero);
-    window.addEventListener("resize", resize);
-    resize();
+    let rz;
+    window.addEventListener("resize", () => {
+      clearTimeout(rz);
+      rz = setTimeout(() => {
+        if (hero.clientWidth !== w || Math.abs(hero.clientHeight - h) > 80) { reset(); if (reduceMotion) draw(0); }
+      }, 200);
+    });
+    reset();
     if (reduceMotion) draw(0); else requestAnimationFrame(loop);
   }
 
