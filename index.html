@@ -68,10 +68,8 @@
       </header>
 
       <article class="proj">
-        <button class="proj__visual proj__visual--myc" type="button" data-open="sheet-1" data-slide="left" aria-label="Open project 01: Mycelium vs. plasterboard">
-          <svg viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1">
-            <path d="M100 190V120M100 120C80 100 60 95 40 70M100 120C120 100 140 95 160 70M40 70C35 55 20 50 15 30M40 70C50 55 55 40 60 20M160 70C165 55 180 50 185 30M160 70C150 55 145 40 140 20M100 120C98 95 102 70 100 40M100 40C92 30 90 20 85 8M100 40C108 30 110 20 115 8"/>
-          </g></svg>
+        <button class="proj__visual" type="button" data-open="sheet-1" data-slide="left" aria-label="Open project 01: Mycelium vs. plasterboard">
+          <img src="assets/img/mycelium-samples.jpg" alt="" loading="lazy">
           <span class="proj__open">Open project +</span>
         </button>
         <div class="proj__body" data-slide="right">
@@ -109,14 +107,14 @@
       </article>
 
       <article class="proj proj--flip">
-        <button class="proj__visual proj__visual--cloud" type="button" data-open="sheet-4" data-slide="right" aria-label="Open project 04: CloudCaps">
-          <span class="proj__figure" aria-hidden="true">135%</span>
+        <button class="proj__visual" type="button" data-open="sheet-4" data-slide="right" aria-label="Open project 04: CloudCaps">
+          <img src="assets/img/cloudcaps.jpg" alt="" loading="lazy">
           <span class="proj__open">Open project +</span>
         </button>
         <div class="proj__body" data-slide="left">
           <span class="proj__no">04</span>
           <h3 class="proj__title">Cloud<em>Caps</em></h3>
-          <p class="proj__text">A bottle opener sculpted from upcycled cellulose acetate, funded on Kickstarter.</p>
+          <p class="proj__text">A cloud-shaped bottle opener CNC-machined from eyewear acetate offcuts, 135&nbsp;% funded on Kickstarter.</p>
           <span class="proj__tags">Product design · Upcycling</span>
         </div>
       </article>
@@ -193,22 +191,37 @@
           An experimental comparison of mycelium-based composites and the
           standard BA13 gypsum panel: thermal insulation, fire and water.
         </p>
+        <dl class="meta" data-slide="left">
+          <div><dt>Context</dt><dd>Fourth-year innovation project at ESILV, 2025 – 26, in a pair with Paul Simonet</dd></div>
+          <div><dt>Tools</dt><dd>3D-printed moulds, instrumented XPS hot box (XIAO ESP32-S3, KY-015 sensors), blowtorch and IR pyrometer, moisture meter</dd></div>
+        </dl>
         <div class="prose" data-slide="left">
           <p>
-            Two formulations were grown: <em>Pleurotus ostreatus</em> on wood
-            chips and <em>Ganoderma lucidum</em> on grain. Colonised substrate
-            was crumbled, packed into custom 3D-printed moulds, incubated for
-            a week, unmoulded to grow a protective fungal “skin”, then dried
-            for about six hours at 60&nbsp;°C.
+            Plasterboard is in almost every partition wall, but making it
+            takes a lot of energy. Mycelium binds farm waste into a light,
+            insulating material.
           </p>
           <p>
-            <strong>Verdict.</strong> Raw mycelium cannot yet replace BA13
-            everywhere — Euroclass fire ratings remain out of reach. But the
-            grain formulation insulated better and resisted water better than
-            plasterboard. Caveat: the mycelium panels were 18&nbsp;mm thick
-            against 12.5&nbsp;mm for BA13.
+            Two formulations were grown: <em>Pleurotus ostreatus</em> (oyster
+            mushroom) on wood chips and <em>Ganoderma lucidum</em> (reishi) on
+            grain. Colonised substrate was crumbled, packed into custom
+            3D-printed moulds, incubated for a week, unmoulded to grow a
+            protective fungal “skin”, then dried for six hours at 60&nbsp;°C.
+            Each formulation was tested against BA13 for heat, fire and water.
           </p>
-          <a class="link" href="https://github.com/MaxVial/portfolio/blob/main/assets/docs/mycelium-vs-plasterboard.pdf" target="_blank" rel="noopener">Read the research paper on GitHub (PDF) <span aria-hidden="true">↗</span></a>
+          <p>
+            <strong>Verdict.</strong> Mycelium is not a like-for-like
+            replacement: plaster stays non-combustible. But on grain it lost
+            only 5.6&nbsp;% of its mass under the flame and kept its core at
+            11&nbsp;% moisture, against 31&nbsp;% for saturated plaster. On wood
+            chips it lost up to 62&nbsp;%, and one sample kept burning on its
+            own. Caveat: the mycelium panels were 18&nbsp;mm thick against
+            12.5&nbsp;mm for BA13.
+          </p>
+          <div class="links">
+            <a class="link" href="https://github.com/MaxVial/portfolio/blob/main/assets/docs/mycelium-vs-plasterboard.pdf" target="_blank" rel="noopener">Research paper (PDF) <span aria-hidden="true">↗</span></a>
+            <a class="link" href="https://github.com/MaxVial/MyceliumBA13-Report" target="_blank" rel="noopener">Protocols &amp; data on GitHub <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
         <ol class="steps" data-slide="left">
           <li><span>1</span>Fragment</li>
@@ -219,6 +232,16 @@
       </div>
 
       <div class="page page--right">
+        <div class="shot-pair" data-slide="right">
+          <figure class="shot">
+            <img src="assets/img/mycelium-samples.jpg" alt="Two mycelium blocks: a crumbly wood-chip sample and a dense one covered in white fungal skin." loading="lazy">
+            <figcaption class="kicker">Samples on wood substrate</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/img/mycelium-fire-test.jpg" alt="Five charred samples in a row after the flame test, plasterboard on the left." loading="lazy">
+            <figcaption class="kicker">After the flame test, BA13 on the left</figcaption>
+          </figure>
+        </div>
         <figure class="chart" data-slide="right">
           <figcaption class="kicker">Fig. 1 — Fire test: temperature of the unexposed face (°C)</figcaption>
           <svg id="fireChart" viewBox="0 0 560 320" role="img" aria-label="Line chart of the temperature behind each sample during and after 60 seconds of blowtorch exposure. Plasterboard peaks at 76.6 degrees, wood-chip mycelium stays under 45 degrees, grain mycelium peaks at 57 degrees and drops quickly."></svg>
@@ -231,8 +254,8 @@
 
         <dl class="stats" data-slide="right">
           <div><dt>Temperature gradient held</dt><dd><b data-count="19.2" data-dec="1">0</b> °C<small>vs 12.7 °C for BA13 (hot-box test)</small></dd></div>
-          <div><dt>Water uptake, grain formula</dt><dd><b data-count="18.7" data-dec="1">0</b> %<small>vs 40 % for BA13 — core stayed dry</small></dd></div>
-          <div><dt>BA13 peak after the flame</dt><dd><b data-count="76.6" data-dec="1">0</b> °C<small>gypsum stores heat, then radiates it</small></dd></div>
+          <div><dt>Core moisture after immersion, grain</dt><dd><b data-count="11" data-dec="0">0</b> %<small>vs 31 % for BA13 — saturated through</small></dd></div>
+          <div><dt>Mass lost under flame, grain</dt><dd><b data-count="5.6" data-dec="1">0</b> %<small>vs 3.1 % for BA13, up to 62 % on wood chips</small></dd></div>
         </dl>
       </div>
     </article>
@@ -372,23 +395,46 @@
         <p class="kicker" data-slide="left">Project 04 — Product design · Kickstarter</p>
         <h2 class="spread__title" id="sheet-4-title" data-slide="left">Cloud<em>Caps</em></h2>
         <p class="spread__lede" data-slide="left">
-          A design-led bottle opener sculpted from upcycled cellulose acetate.
+          A cloud-shaped bottle opener, CNC-machined from reclaimed eyewear
+          acetate and funded on Kickstarter.
         </p>
+        <dl class="meta" data-slide="left">
+          <div><dt>Team</dt><dd>Three classmates, from design and prototyping to the campaign and production</dd></div>
+          <div><dt>Tools</dt><dd>SolidWorks, CNC machining, reclaimed cellulose acetate, metal opener insert, Kickstarter</dd></div>
+        </dl>
         <div class="prose" data-slide="left">
           <p>
-            Cellulose acetate is the tough, patterned material of high-end
-            eyewear. CloudCaps recovers offcuts of it from La Réserve des Arts
-            in Paris and CNC-machines them into bottle openers built to last.
+            Cellulose acetate is what eyeglass frames are made of: good-looking,
+            tough, a little premium. We reclaimed offcuts and unsold sheets,
+            notably from La Réserve des Arts in Paris, to give them a second
+            life. No two sheets match, so every opener has its own pattern.
           </p>
           <p>
-            Because the stock depends on what the fashion industry discards,
-            no two pieces match: every backer opens a one-of-a-kind object.
+            The cloud shape comes from ergonomics: its rounded lobes sit well
+            in the hand when you open a bottle. Drawn in SolidWorks, it is
+            CNC-machined from the acetate sheets, with a screwed-on metal
+            opener insert. Several prototypes came before a Quickstarter
+            campaign, with photos and a promo video we made ourselves.
+          </p>
+          <p>
+            <strong>Outcome.</strong> 135&nbsp;% funded. The run is being made
+            this autumn, with deliveries planned for December.
           </p>
           <a class="link" href="https://www.kickstarter.com/projects/ps75/cloudcaps-bottle-opener-quickstarter" target="_blank" rel="noopener">See the Kickstarter campaign <span aria-hidden="true">↗</span></a>
         </div>
       </div>
 
-      <div class="page page--right page--center">
+      <div class="page page--right">
+        <figure class="shot" data-slide="right">
+          <img src="assets/img/cloudcaps-blue.jpg" alt="CloudCaps bottle opener in blue and brown acetate with its round metal insert." loading="lazy">
+          <figcaption class="kicker">CloudCaps, blue version</figcaption>
+        </figure>
+        <div class="gallery" data-slide="right">
+          <figure class="shot"><img src="assets/img/cloudcaps-hand.jpg" alt="The opener held between two fingers." loading="lazy"><figcaption class="kicker">In the hand</figcaption></figure>
+          <figure class="shot"><img src="assets/img/cloudcaps-cnc.jpg" alt="A CNC spindle cutting the shape into an acetate sheet." loading="lazy"><figcaption class="kicker">CNC machining the sheet</figcaption></figure>
+          <figure class="shot"><img src="assets/img/acetate-sheets.jpg" alt="Close-up of two reclaimed acetate sheets with confetti patterns." loading="lazy"><figcaption class="kicker">Reclaimed acetate sheets</figcaption></figure>
+          <figure class="shot"><img src="assets/img/cloudcaps-bottle.jpg" alt="The opener next to a glass soda bottle and its cap." loading="lazy"><figcaption class="kicker">With its bottle</figcaption></figure>
+        </div>
         <div class="funded" data-slide="right">
           <span class="kicker">Funded</span>
           <p class="funded__big"><b data-count="135" data-dec="0">0</b><sup>%</sup></p>
