@@ -517,18 +517,30 @@ html.is-locked { overflow: hidden; }
 .contact {
   position: relative; z-index: 6;
   background: var(--forest); color: var(--cream);
-  padding: clamp(70px, 12vw, 170px) var(--gutter);
+  padding: clamp(48px, 7vw, 100px) var(--gutter);
   text-align: center;
 }
 .contact .kicker, .contact__sub { color: #9aa58c; }
 .contact__sub a { color: var(--cream); text-underline-offset: 4px; }
 .contact__sub a:hover, .contact__sub a:focus-visible { color: var(--glow); }
-.contact__sub span { margin: 0 10px; }
+.contact__mail {
+  display: block;
+  width: fit-content; max-width: 100%;
+  margin: 4px auto 18px;
+  padding: 12px 20px;
+  border: 1px solid rgba(198, 238, 108, 0.5);
+  border-radius: 999px;
+  font-family: var(--mono); font-size: clamp(14px, 1.4vw, 18px);
+  color: var(--cream); text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: background 0.3s, color 0.3s;
+}
+.contact__mail:hover, .contact__mail:focus-visible { background: var(--glow); color: var(--forest); }
 .contact__big em { color: var(--glow); }
 .contact__big {
   display: inline-block;
   font-family: var(--serif);
-  font-size: clamp(84px, 19vw, 380px);
+  font-size: clamp(64px, 11vw, 200px);
   line-height: 0.86; letter-spacing: -0.03em;
   text-decoration: none;
   margin: 18px 0;
