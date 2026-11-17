@@ -4,15 +4,18 @@
 
 A single-page portfolio written in plain HTML, CSS and JavaScript. No build step, no dependencies.
 
-## Run it locally
+## How to run it
 
-Open `index.html` in a browser, or serve the folder:
+1. **Online:** https://maxvial.github.io/portfolio/
+2. **On a laptop:** clone the repository and open `index.html` in a browser. Nothing to install. To serve it like the real site instead, run `python -m http.server 5173` in the folder and visit http://localhost:5173. With Docker: `docker build -t portfolio .` then `docker run -p 8080:80 portfolio` and visit http://localhost:8080.
+3. **Hosting:** GitHub Pages, served over HTTPS from the `gh-pages` branch of this repository. To put a change online, commit it on `main`, then push it to both branches:
 
-```bash
-python -m http.server 5173
-```
+   ```bash
+   git push origin main
+   git push origin main:gh-pages
+   ```
 
-Then visit http://localhost:5173.
+   GitHub Pages rebuilds the site within a minute or two.
 
 ## Structure
 
@@ -20,8 +23,9 @@ Then visit http://localhost:5173.
 | --- | --- |
 | `index.html` | Content and structure of the page |
 | `style.css` | Layout, typography, animations |
-| `main.js` | Hero canvas, horizontal project index, scroll reveals, fire-test chart |
-| `assets/img/` | Project images |
+| `main.js` | Hero canvas, project sheets and their animations, stacked sections, timeline, fire-test chart |
+| `assets/img/` | Project images (compressed JPEG / WebP) |
+| `Dockerfile` | Optional: serves the folder with nginx |
 | `assets/docs/` | Mycelium research paper (PDF) |
 
 ## Projects shown
@@ -32,4 +36,4 @@ Then visit http://localhost:5173.
 
 ## Contact
 
-[LinkedIn](https://www.linkedin.com/in/maxime-vial-0b1971268/)
+[LinkedIn](https://www.linkedin.com/in/maxime-vial-0b1971268/) · [GitHub](https://github.com/MaxVial)
