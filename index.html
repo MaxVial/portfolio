@@ -32,22 +32,21 @@
     <section class="hero">
       <canvas id="field" class="hero__canvas" aria-hidden="true"></canvas>
 
-      <div class="hero__strip">
-        <span>Paris, France</span>
-        <span>Createch · ESILV</span>
-        <span>Edition 2026</span>
-      </div>
-
       <h1 class="hero__title" aria-label="Maxime Vial">
         <span class="hero__word hero__word--left"><span>Maxime</span></span>
         <span class="hero__word hero__word--right"><span>Vial</span></span>
       </h1>
 
       <div class="hero__foot">
-        <p class="hero__lede" data-slide="left">
-          Engineering student working where <em>hardware</em>, <em>radio waves</em>
-          and <em>living materials</em> meet.
-        </p>
+        <aside class="popup" aria-label="About me">
+          <p class="popup__status"><i aria-hidden="true"></i>Open to internships</p>
+          <p class="popup__school">Engineering student · <b>Createch</b> programme, <b>ESILV</b> — Paris</p>
+          <p class="popup__ask">Looking for a <b>5th-year engineering internship</b> in <em>telemetry</em>, <em>AI</em> and <em>embedded systems</em>.</p>
+          <div class="popup__actions">
+            <a class="popup__btn" href="#contact">Contact me <span aria-hidden="true">↓</span></a>
+            <a class="popup__mail" href="mailto:vialmaxime400@gmail.com">vialmaxime400@gmail.com</a>
+          </div>
+        </aside>
         <a class="hero__cue" href="#projects" data-slide="right">See the projects <span aria-hidden="true">↓</span></a>
       </div>
     </section>
@@ -64,7 +63,7 @@
     <section class="projects" id="projects">
       <header class="projects__head">
         <h2 class="projects__title" data-slide="left">Projects</h2>
-        <p class="projects__count" data-slide="right"><b>04</b><span class="kicker">Selected works<br>Click a project to open it</span></p>
+        <p class="projects__count" data-slide="right"><b>03</b><span class="kicker">Selected works<br>Click a project to open it</span></p>
       </header>
 
       <article class="proj">
@@ -93,26 +92,14 @@
         </div>
       </article>
 
+
       <article class="proj">
-        <button class="proj__visual proj__visual--dark" type="button" data-open="sheet-3" data-slide="left" aria-label="Open project 03: Snake Eye">
-          <img src="assets/img/kit-schema.png" alt="" loading="lazy">
+        <button class="proj__visual" type="button" data-open="sheet-4" data-slide="left" aria-label="Open project 03: CloudCaps">
+          <img src="assets/img/cloudcaps.jpg" alt="" loading="lazy">
           <span class="proj__open">Open project +</span>
         </button>
         <div class="proj__body" data-slide="right">
           <span class="proj__no">03</span>
-          <h3 class="proj__title">Snake <em>Eye</em></h3>
-          <p class="proj__text">A plug-and-play forensic radio box that maps Wi-Fi, Bluetooth LE and LoRaWAN at once.</p>
-          <span class="proj__tags">Cybersecurity · RF · Linux</span>
-        </div>
-      </article>
-
-      <article class="proj proj--flip">
-        <button class="proj__visual" type="button" data-open="sheet-4" data-slide="right" aria-label="Open project 04: CloudCaps">
-          <img src="assets/img/cloudcaps.jpg" alt="" loading="lazy">
-          <span class="proj__open">Open project +</span>
-        </button>
-        <div class="proj__body" data-slide="left">
-          <span class="proj__no">04</span>
           <h3 class="proj__title">Cloud<em>Caps</em></h3>
           <p class="proj__text">A cloud-shaped bottle opener CNC-machined from eyewear acetate offcuts, 135&nbsp;% funded on Kickstarter.</p>
           <span class="proj__tags">Product design · Upcycling</span>
@@ -131,7 +118,7 @@
           <li data-slide="right">
             <span class="kicker">French Guiana · from June 2026</span>
             <h3>Guiana Space Centre</h3>
-            <p>Deployed to Kourou for cybersecurity research around the spaceport: wireless audits, a forensic radio box, and one-way log retrieval with data diodes.</p>
+            <p>Deployed to Kourou for cybersecurity research around the spaceport: wireless security audits and one-way log retrieval with data diodes.</p>
           </li>
           <li data-slide="right">
             <span class="kicker">French Guiana</span>
@@ -168,7 +155,11 @@
       <a class="contact__big" href="https://www.linkedin.com/in/maxime-vial-0b1971268/" target="_blank" rel="noopener">
         <span>Let's</span> <em>talk</em> <span class="contact__arrow" aria-hidden="true">↗</span>
       </a>
-      <p class="contact__sub">Find me on LinkedIn</p>
+      <p class="contact__sub">
+        <a href="mailto:vialmaxime400@gmail.com">vialmaxime400@gmail.com</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://www.linkedin.com/in/maxime-vial-0b1971268/" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
     </section>
 
   </main>
@@ -317,82 +308,13 @@
     </article>
   </dialog>
 
+
   <!-- Project 03 -->
-  <dialog class="sheet sheet--dark" id="sheet-3" aria-labelledby="sheet-3-title">
-    <button class="sheet__close" type="button" data-close>Close ✕</button>
-    <article class="spread spread--dark">
-      <div class="page page--left">
-        <p class="kicker" data-slide="left">Project 03 — Internship, French Guiana · Guiana Space Centre</p>
-        <h2 class="spread__title" id="sheet-3-title" data-slide="left">Snake <em>Eye</em></h2>
-        <p class="spread__lede" data-slide="left">
-          A mobile, passive forensic radio box designed to map every wireless
-          network around a launch site.
-        </p>
-        <div class="prose" data-slide="left">
-          <p>
-            If a launch goes wrong, a spaceport has to be able to show that the
-            anomaly was not caused by an outside action on its radio
-            environment. Snake Eye is the collection kit imagined for that
-            job: one Linux “brain”, three radio modules, no soldering.
-          </p>
-          <p>
-            Three domains — Bluetooth LE, private Wi-Fi and LoRaWAN — are
-            captured side by side and merged into time-stamped
-            <code>.pcap</code> files.
-          </p>
-        </div>
-        <div class="modes" data-slide="left">
-          <div>
-            <span class="kicker">Mode A</span>
-            <h3>Black box</h3>
-            <p>Boots, launches <code>tshark</code> on every radio interface and records to the SD card, fully offline.</p>
-          </div>
-          <div>
-            <span class="kicker">Mode B</span>
-            <h3>Live stream</h3>
-            <p>One SSH command pipes all three captures in real time into Wireshark on the analyst's laptop.</p>
-          </div>
-        </div>
-        <p class="stack kicker" data-slide="left">Raspberry Pi OS Lite · rtl8814au (DKMS) · airmon-ng · nRF Sniffer · Python 3 · tshark · OpenSSH</p>
-      </div>
-
-      <div class="page page--right">
-        <figure class="shot shot--plain" data-slide="right">
-          <img src="assets/img/kit-schema.png" alt="Wiring diagram: a Raspberry Pi 5 connected over USB to an Alfa Wi-Fi adapter, a Nordic nRF52840 dongle and an RTL-SDR v4 key." loading="lazy">
-          <figcaption class="kicker">Fig. 5 — Hardware wiring of the box</figcaption>
-        </figure>
-        <ul class="bom" data-slide="right">
-          <li>
-            <img src="assets/img/raspberry-pi-5.jpg" alt="Raspberry Pi 5" loading="lazy">
-            <b>Raspberry Pi 5</b><span>The brain — powers, time-stamps, merges</span>
-          </li>
-          <li>
-            <img src="assets/img/alfa-awus1900.png" alt="Alfa AWUS1900 Wi-Fi adapter" loading="lazy">
-            <b>Alfa AWUS1900</b><span>Wi-Fi 2.4 / 5 GHz, monitor mode</span>
-          </li>
-          <li>
-            <img src="assets/img/nrf52840.jpg" alt="Nordic nRF52840 dongle" loading="lazy">
-            <b>nRF52840</b><span>Bluetooth LE sniffer, follows channel hops</span>
-          </li>
-          <li>
-            <img src="assets/img/rtl-sdr.jpg" alt="RTL-SDR v4 key" loading="lazy">
-            <b>RTL-SDR v4</b><span>LoRaWAN / IoT, 868 MHz antenna</span>
-          </li>
-        </ul>
-        <figure class="shot shot--light" data-slide="right">
-          <img src="assets/img/nordic-schema.png" alt="Diagram of the Bluetooth capture chain: nRF52840 with sniffer firmware, USB serial port, Python script, Wireshark extcap plugin." loading="lazy">
-          <figcaption class="kicker">Fig. 6 — Bluetooth LE capture chain into Wireshark</figcaption>
-        </figure>
-      </div>
-    </article>
-  </dialog>
-
-  <!-- Project 04 -->
   <dialog class="sheet" id="sheet-4" aria-labelledby="sheet-4-title">
     <button class="sheet__close" type="button" data-close>Close ✕</button>
     <article class="spread">
       <div class="page page--left">
-        <p class="kicker" data-slide="left">Project 04 — Product design · Kickstarter</p>
+        <p class="kicker" data-slide="left">Project 03 — Product design · Kickstarter</p>
         <h2 class="spread__title" id="sheet-4-title" data-slide="left">Cloud<em>Caps</em></h2>
         <p class="spread__lede" data-slide="left">
           A cloud-shaped bottle opener, CNC-machined from reclaimed eyewear

@@ -28,8 +28,7 @@ Then visit http://localhost:5173.
 
 1. **Mycelium vs. plasterboard** — experimental comparison of a mycelium composite and BA13.
 2. **Reading the weather by radio** — Ecowitt weather station installation and RF decoding.
-3. **Snake Eye** — forensic radio box for Wi-Fi, Bluetooth LE and LoRaWAN capture.
-4. **CloudCaps** — bottle opener made of upcycled cellulose acetate, funded on Kickstarter.
+3. **CloudCaps** — bottle opener made of upcycled cellulose acetate, funded on Kickstarter.
 
 ## Contact
 
