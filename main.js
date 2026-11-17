@@ -166,7 +166,7 @@
     };
 
     const loop = (t) => {
-      if (visible) {
+      if (visible && !hero.classList.contains("is-covered")) {
         frame++;
         grow();
         if (t - ptr.lastRing > (ptr.active ? 1500 : 3200)) {
@@ -225,6 +225,31 @@
   };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
+
+  /* ───────── 2b. Stacked sections ─────────
+     A section pins as soon as its bottom reaches the bottom of the screen
+     (sticky top = screen height − section height), so the next section
+     slides over it. --cover (0 → 1) tracks how much of it is covered. */
+  const stack = [...document.querySelectorAll("[data-stack]")];
+  const pinStack = () => {
+    stack.forEach((s) => { s.style.top = `${Math.min(0, window.innerHeight - s.offsetHeight)}px`; });
+  };
+  const coverStack = () => {
+    const vh = window.innerHeight;
+    stack.forEach((s) => {
+      const next = s.nextElementSibling;
+      if (!next) return;
+      const top = next.getBoundingClientRect().top;
+      const c = Math.max(0, Math.min(1, 1 - top / vh));
+      s.style.setProperty("--cover", c.toFixed(3));
+      s.classList.toggle("is-covered", c > 0.98);
+    });
+  };
+  pinStack(); coverStack();
+  window.addEventListener("scroll", coverStack, { passive: true });
+  window.addEventListener("resize", () => { pinStack(); coverStack(); });
+  window.addEventListener("load", () => { pinStack(); coverStack(); });
+  if ("ResizeObserver" in window) new ResizeObserver(() => { pinStack(); coverStack(); }).observe(document.querySelector("main"));
 
   /* ───────── 3. Reveals, counters, project sheets ───────── */
   const countUp = (el) => {

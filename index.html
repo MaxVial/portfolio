@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -20,8 +20,8 @@
     <a class="masthead__name" href="#top">Maxime Vial</a>
     <nav class="masthead__nav" aria-label="Main">
       <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
       <a href="#experiences">Experiences</a>
+      <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
     <span class="masthead__meta">Portfolio — Vol. 01</span>
@@ -30,7 +30,7 @@
   <main id="top">
 
     <!-- ───────────── Hero ───────────── -->
-    <section class="hero">
+    <section class="hero" data-stack>
       <canvas id="field" class="hero__canvas" aria-hidden="true"></canvas>
 
       <h1 class="hero__title" aria-label="Maxime Vial">
@@ -60,7 +60,7 @@
     </div>
 
     <!-- ───────────── 01 · Projects ───────────── -->
-    <section class="projects" id="projects">
+    <section class="projects" id="projects" data-stack>
       <header class="projects__head">
         <h2 class="projects__title" data-slide="left"><span class="sec-no">01</span>Projects</h2>
         <p class="projects__count" data-slide="right"><b>03</b><span class="kicker">Selected works<br>Click a project to open it</span></p>
@@ -106,86 +106,10 @@
       </article>
     </section>
 
-    <!-- ───────────── 02 · Skills ───────────── -->
-    <section class="skills" id="skills">
-      <svg class="edge" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90V52C120 20 220 70 360 48S600 4 760 30s300 52 450 18 180-30 230-20V90Z"/></svg>
+    <!-- ───────────── 02 · Experiences (timeline) ───────────── -->
+    <section class="xp" id="experiences" data-stack>
       <header class="sec-head">
-        <h2 class="sec-head__title" data-slide="left"><span class="sec-no">02</span>Skills</h2>
-        <p class="sec-head__note" data-slide="right">Gathered from the projects and experiences on this page.<br>More to come.</p>
-      </header>
-
-      <div class="skills__grid">
-        <article class="skill" data-slide="left">
-          <svg class="skill__ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="12" width="24" height="24" rx="3"/><path d="M18 12V5M24 12V5M30 12V5M18 43v-7M24 43v-7M30 43v-7M12 18H5M12 24H5M12 30H5M43 18h-7M43 24h-7M43 30h-7"/></svg>
-          <h3>Embedded <em>&amp;</em> sensors</h3>
-          <ul class="chips">
-            <li>ESP32 (XIAO ESP32-S3)</li>
-            <li>Sensor integration</li>
-            <li>Instrumented test bench</li>
-            <li>IoT station setup &amp; pairing</li>
-            <li>Firmware updates</li>
-          </ul>
-          <p class="skill__src">Seen in — Mycelium study · Weather station</p>
-        </article>
-
-        <article class="skill" data-slide="left">
-          <svg class="skill__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 30v14M17 44h14"/><circle cx="24" cy="26" r="3"/><path d="M16 18a11 11 0 0 1 16 0M10 12a19 19 0 0 1 28 0"/></svg>
-          <h3>Radio <em>&amp;</em> telemetry</h3>
-          <ul class="chips">
-            <li>Software-defined radio (RTL-SDR)</li>
-            <li>RF frame capture &amp; decoding</li>
-            <li>Wireless gateways</li>
-            <li>Microdrone piloting</li>
-            <li>Flight controllers, ESCs, radio telemetry</li>
-          </ul>
-          <p class="skill__src">Seen in — Weather station · Campus Cyber</p>
-        </article>
-
-        <article class="skill" data-slide="right">
-          <svg class="skill__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M20 4h8v16h-8z"/><path d="M24 20v8"/><path d="M21 28h6l-3 6z"/><path d="M6 40h36M10 40v4M38 40v4"/></svg>
-          <h3>Fabrication <em>&amp;</em> CAD</h3>
-          <ul class="chips">
-            <li>SolidWorks</li>
-            <li>3D printing (custom moulds)</li>
-            <li>CNC machining</li>
-            <li>Iterative prototyping</li>
-          </ul>
-          <p class="skill__src">Seen in — Mycelium study · CloudCaps</p>
-        </article>
-
-        <article class="skill" data-slide="right">
-          <svg class="skill__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M19 4h10M21 4v14L9 40a3 3 0 0 0 3 4h24a3 3 0 0 0 3-4L27 18V4"/><path d="M14 32h20"/></svg>
-          <h3>Lab <em>&amp;</em> method</h3>
-          <ul class="chips">
-            <li>Mycelium biofabrication</li>
-            <li>Thermal, fire &amp; water test protocols</li>
-            <li>Measurement &amp; data analysis</li>
-            <li>PPE &amp; contamination control</li>
-            <li>Autoclave sterilisation</li>
-            <li>Regulated waste handling</li>
-          </ul>
-          <p class="skill__src">Seen in — Mycelium study · IRSN</p>
-        </article>
-
-        <article class="skill skill--wide" data-slide="left">
-          <svg class="skill__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 20v8l26 10V10L6 20z"/><path d="M32 18a6 6 0 0 1 0 12"/><path d="M12 28l3 12h6l-3-10"/></svg>
-          <h3>Product <em>&amp;</em> communication</h3>
-          <ul class="chips">
-            <li>Crowdfunding campaign</li>
-            <li>Product photo &amp; video</li>
-            <li>Scientific writing</li>
-            <li>Exhibition stand &amp; live demos</li>
-          </ul>
-          <p class="skill__src">Seen in — CloudCaps · Mycelium study · BreizhCTF</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ───────────── 03 · Experiences (timeline) ───────────── -->
-    <section class="xp" id="experiences">
-      <svg class="edge" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90V40c160 30 300-24 470-6s260 46 420 20 300-50 550-14V90Z"/></svg>
-      <header class="sec-head">
-        <h2 class="sec-head__title" data-slide="left"><span class="sec-no">03</span>My <em>experiences</em></h2>
+        <h2 class="sec-head__title" data-slide="left"><span class="sec-no">02</span>My <em>experiences</em></h2>
         <div class="xp__nav" data-slide="right">
           <span class="kicker">Drag or scroll sideways</span>
           <button class="xp__btn" type="button" data-dir="-1" aria-label="Scroll the timeline back">←</button>
@@ -268,9 +192,82 @@
       <div class="tl__progress" aria-hidden="true"><span id="tlBar"></span></div>
     </section>
 
+    <!-- ───────────── 03 · Skills ───────────── -->
+    <section class="skills" id="skills" data-stack>
+      <header class="sec-head">
+        <h2 class="sec-head__title" data-slide="left"><span class="sec-no">03</span>Skills</h2>
+        <p class="sec-head__note" data-slide="right">Gathered from the projects and experiences above.<br>More to come.</p>
+      </header>
+
+      <div class="skills__grid">
+        <article class="skill" data-slide="left">
+          <svg class="skill__ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="12" width="24" height="24" rx="3"/><path d="M18 12V5M24 12V5M30 12V5M18 43v-7M24 43v-7M30 43v-7M12 18H5M12 24H5M12 30H5M43 18h-7M43 24h-7M43 30h-7"/></svg>
+          <h3>Embedded <em>&amp;</em> sensors</h3>
+          <ul class="chips">
+            <li>ESP32 (XIAO ESP32-S3)</li>
+            <li>Sensor integration</li>
+            <li>Instrumented test bench</li>
+            <li>IoT station setup &amp; pairing</li>
+            <li>Firmware updates</li>
+          </ul>
+          <p class="skill__src">Seen in — Mycelium study · Weather station</p>
+        </article>
+
+        <article class="skill" data-slide="left">
+          <svg class="skill__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 30v14M17 44h14"/><circle cx="24" cy="26" r="3"/><path d="M16 18a11 11 0 0 1 16 0M10 12a19 19 0 0 1 28 0"/></svg>
+          <h3>Radio <em>&amp;</em> telemetry</h3>
+          <ul class="chips">
+            <li>Software-defined radio (RTL-SDR)</li>
+            <li>RF frame capture &amp; decoding</li>
+            <li>Wireless gateways</li>
+            <li>Microdrone piloting</li>
+            <li>Flight controllers, ESCs, radio telemetry</li>
+          </ul>
+          <p class="skill__src">Seen in — Weather station · Campus Cyber</p>
+        </article>
+
+        <article class="skill" data-slide="right">
+          <svg class="skill__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M20 4h8v16h-8z"/><path d="M24 20v8"/><path d="M21 28h6l-3 6z"/><path d="M6 40h36M10 40v4M38 40v4"/></svg>
+          <h3>Fabrication <em>&amp;</em> CAD</h3>
+          <ul class="chips">
+            <li>SolidWorks</li>
+            <li>3D printing (custom moulds)</li>
+            <li>CNC machining</li>
+            <li>Iterative prototyping</li>
+          </ul>
+          <p class="skill__src">Seen in — Mycelium study · CloudCaps</p>
+        </article>
+
+        <article class="skill" data-slide="right">
+          <svg class="skill__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M19 4h10M21 4v14L9 40a3 3 0 0 0 3 4h24a3 3 0 0 0 3-4L27 18V4"/><path d="M14 32h20"/></svg>
+          <h3>Lab <em>&amp;</em> method</h3>
+          <ul class="chips">
+            <li>Mycelium biofabrication</li>
+            <li>Thermal, fire &amp; water test protocols</li>
+            <li>Measurement &amp; data analysis</li>
+            <li>PPE &amp; contamination control</li>
+            <li>Autoclave sterilisation</li>
+            <li>Regulated waste handling</li>
+          </ul>
+          <p class="skill__src">Seen in — Mycelium study · IRSN</p>
+        </article>
+
+        <article class="skill skill--wide" data-slide="left">
+          <svg class="skill__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 20v8l26 10V10L6 20z"/><path d="M32 18a6 6 0 0 1 0 12"/><path d="M12 28l3 12h6l-3-10"/></svg>
+          <h3>Product <em>&amp;</em> communication</h3>
+          <ul class="chips">
+            <li>Crowdfunding campaign</li>
+            <li>Product photo &amp; video</li>
+            <li>Scientific writing</li>
+            <li>Exhibition stand &amp; live demos</li>
+          </ul>
+          <p class="skill__src">Seen in — CloudCaps · Mycelium study · BreizhCTF</p>
+        </article>
+      </div>
+    </section>
+
     <!-- ───────────── Contact ───────────── -->
     <section class="contact" id="contact">
-      <svg class="edge" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90V58c200-40 360 22 560 0s340-54 520-30 260 30 360 8V90Z"/></svg>
       <p class="kicker">Contact</p>
       <a class="contact__big" href="https://www.linkedin.com/in/maxime-vial-0b1971268/" target="_blank" rel="noopener">
         <span>Let's</span> <em>talk</em> <span class="contact__arrow" aria-hidden="true">↗</span>
@@ -278,6 +275,8 @@
       <a class="contact__mail" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=vialmaxime400@gmail.com" target="_blank" rel="noopener">vialmaxime400@gmail.com <span aria-hidden="true">↗</span></a>
       <p class="contact__sub">
         <a href="https://www.linkedin.com/in/maxime-vial-0b1971268/" target="_blank" rel="noopener">LinkedIn</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://github.com/MaxVial" target="_blank" rel="noopener">GitHub</a>
       </p>
     </section>
 
@@ -537,6 +536,6 @@
     </article>
   </dialog>
 
-  <script src="main.js?v=6"></script>
+  <script src="main.js?v=7"></script>
 </body>
 </html>
