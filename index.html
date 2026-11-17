@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Maxime Vial — Portfolio</title>
-  <meta name="description" content="Portfolio of Maxime Vial, Createch engineering student at ESILV: hardware, radio frequencies, cybersecurity and biomaterials.">
+  <meta name="description" content="Portfolio of Maxime Vial, Createch engineering student at ESILV, looking for a 5th-year internship in telemetry, AI and embedded systems.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -20,6 +20,7 @@
     <a class="masthead__name" href="#top">Maxime Vial</a>
     <nav class="masthead__nav" aria-label="Main">
       <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
       <a href="#experiences">Experiences</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -53,19 +54,19 @@
     <!-- ───────────── Marquee ───────────── -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span>Hardware</span><i>✳</i><span>Radio frequency</span><i>✳</i><span>Cybersecurity</span><i>✳</i><span>Biomaterials</span><i>✳</i><span>Product design</span><i>✳</i>
-        <span>Hardware</span><i>✳</i><span>Radio frequency</span><i>✳</i><span>Cybersecurity</span><i>✳</i><span>Biomaterials</span><i>✳</i><span>Product design</span><i>✳</i>
+        <span>Hardware</span><i>✳</i><span>Radio frequency</span><i>✳</i><span>Telemetry</span><i>✳</i><span>Biomaterials</span><i>✳</i><span>Product design</span><i>✳</i>
+        <span>Hardware</span><i>✳</i><span>Radio frequency</span><i>✳</i><span>Telemetry</span><i>✳</i><span>Biomaterials</span><i>✳</i><span>Product design</span><i>✳</i>
       </div>
     </div>
 
-    <!-- ───────────── Projects ───────────── -->
+    <!-- ───────────── 01 · Projects ───────────── -->
     <section class="projects" id="projects">
       <header class="projects__head">
-        <h2 class="projects__title" data-slide="left">Projects</h2>
+        <h2 class="projects__title" data-slide="left"><span class="sec-no">01</span>Projects</h2>
         <p class="projects__count" data-slide="right"><b>03</b><span class="kicker">Selected works<br>Click a project to open it</span></p>
       </header>
 
-      <article class="proj">
+      <article class="proj" style="--t:#5d7a32">
         <button class="proj__visual" type="button" data-open="sheet-1" data-slide="left" aria-label="Open project 01: Mycelium vs. plasterboard">
           <img src="assets/img/mycelium-samples.jpg" alt="" loading="lazy">
           <span class="proj__open">Open project +</span>
@@ -78,7 +79,7 @@
         </div>
       </article>
 
-      <article class="proj proj--flip">
+      <article class="proj proj--flip" style="--t:#b5651d">
         <button class="proj__visual" type="button" data-open="sheet-2" data-slide="right" aria-label="Open project 02: Reading the weather by radio">
           <img src="assets/img/ecowitt-map.png" alt="" loading="lazy">
           <span class="proj__open">Open project +</span>
@@ -91,9 +92,8 @@
         </div>
       </article>
 
-
-      <article class="proj">
-        <button class="proj__visual" type="button" data-open="sheet-4" data-slide="left" aria-label="Open project 03: CloudCaps">
+      <article class="proj" style="--t:#3f6aa6">
+        <button class="proj__visual" type="button" data-open="sheet-3" data-slide="left" aria-label="Open project 03: CloudCaps">
           <img src="assets/img/cloudcaps.jpg" alt="" loading="lazy">
           <span class="proj__open">Open project +</span>
         </button>
@@ -106,35 +106,171 @@
       </article>
     </section>
 
-    <!-- ───────────── My experiences ───────────── -->
+    <!-- ───────────── 02 · Skills ───────────── -->
+    <section class="skills" id="skills">
+      <svg class="edge" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90V52C120 20 220 70 360 48S600 4 760 30s300 52 450 18 180-30 230-20V90Z"/></svg>
+      <header class="sec-head">
+        <h2 class="sec-head__title" data-slide="left"><span class="sec-no">02</span>Skills</h2>
+        <p class="sec-head__note" data-slide="right">Gathered from the projects and experiences on this page.<br>More to come.</p>
+      </header>
+
+      <div class="skills__grid">
+        <article class="skill" data-slide="left">
+          <svg class="skill__ico" viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="12" width="24" height="24" rx="3"/><path d="M18 12V5M24 12V5M30 12V5M18 43v-7M24 43v-7M30 43v-7M12 18H5M12 24H5M12 30H5M43 18h-7M43 24h-7M43 30h-7"/></svg>
+          <h3>Embedded <em>&amp;</em> sensors</h3>
+          <ul class="chips">
+            <li>ESP32 (XIAO ESP32-S3)</li>
+            <li>Sensor integration</li>
+            <li>Instrumented test bench</li>
+            <li>IoT station setup &amp; pairing</li>
+            <li>Firmware updates</li>
+          </ul>
+          <p class="skill__src">Seen in — Mycelium study · Weather station</p>
+        </article>
+
+        <article class="skill" data-slide="left">
+          <svg class="skill__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 30v14M17 44h14"/><circle cx="24" cy="26" r="3"/><path d="M16 18a11 11 0 0 1 16 0M10 12a19 19 0 0 1 28 0"/></svg>
+          <h3>Radio <em>&amp;</em> telemetry</h3>
+          <ul class="chips">
+            <li>Software-defined radio (RTL-SDR)</li>
+            <li>RF frame capture &amp; decoding</li>
+            <li>Wireless gateways</li>
+            <li>Microdrone piloting</li>
+            <li>Flight controllers, ESCs, radio telemetry</li>
+          </ul>
+          <p class="skill__src">Seen in — Weather station · Campus Cyber</p>
+        </article>
+
+        <article class="skill" data-slide="right">
+          <svg class="skill__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M20 4h8v16h-8z"/><path d="M24 20v8"/><path d="M21 28h6l-3 6z"/><path d="M6 40h36M10 40v4M38 40v4"/></svg>
+          <h3>Fabrication <em>&amp;</em> CAD</h3>
+          <ul class="chips">
+            <li>SolidWorks</li>
+            <li>3D printing (custom moulds)</li>
+            <li>CNC machining</li>
+            <li>Iterative prototyping</li>
+          </ul>
+          <p class="skill__src">Seen in — Mycelium study · CloudCaps</p>
+        </article>
+
+        <article class="skill" data-slide="right">
+          <svg class="skill__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M19 4h10M21 4v14L9 40a3 3 0 0 0 3 4h24a3 3 0 0 0 3-4L27 18V4"/><path d="M14 32h20"/></svg>
+          <h3>Lab <em>&amp;</em> method</h3>
+          <ul class="chips">
+            <li>Mycelium biofabrication</li>
+            <li>Thermal, fire &amp; water test protocols</li>
+            <li>Measurement &amp; data analysis</li>
+            <li>PPE &amp; contamination control</li>
+            <li>Autoclave sterilisation</li>
+            <li>Regulated waste handling</li>
+          </ul>
+          <p class="skill__src">Seen in — Mycelium study · IRSN</p>
+        </article>
+
+        <article class="skill skill--wide" data-slide="left">
+          <svg class="skill__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 20v8l26 10V10L6 20z"/><path d="M32 18a6 6 0 0 1 0 12"/><path d="M12 28l3 12h6l-3-10"/></svg>
+          <h3>Product <em>&amp;</em> communication</h3>
+          <ul class="chips">
+            <li>Crowdfunding campaign</li>
+            <li>Product photo &amp; video</li>
+            <li>Scientific writing</li>
+            <li>Exhibition stand &amp; live demos</li>
+          </ul>
+          <p class="skill__src">Seen in — CloudCaps · Mycelium study · BreizhCTF</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ───────────── 03 · Experiences (timeline) ───────────── -->
     <section class="xp" id="experiences">
-      <div class="page page--left">
-        <p class="kicker" data-slide="left">Background</p>
-        <h2 class="spread__title" data-slide="left">My <em>experiences</em></h2>
+      <svg class="edge" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90V40c160 30 300-24 470-6s260 46 420 20 300-50 550-14V90Z"/></svg>
+      <header class="sec-head">
+        <h2 class="sec-head__title" data-slide="left"><span class="sec-no">03</span>My <em>experiences</em></h2>
+        <div class="xp__nav" data-slide="right">
+          <span class="kicker">Drag or scroll sideways</span>
+          <button class="xp__btn" type="button" data-dir="-1" aria-label="Scroll the timeline back">←</button>
+          <button class="xp__btn" type="button" data-dir="1" aria-label="Scroll the timeline forward">→</button>
+        </div>
+      </header>
+
+      <div class="tl" id="timeline" tabindex="0" aria-label="Timeline of experiences and projects, scrollable sideways">
+        <ol class="tl__track">
+          <li class="tl__item" data-side="up">
+            <article class="tl__card">
+              <span class="tl__type">Experience</span>
+              <h3>IRSN — Research laboratory</h3>
+              <p class="tl__place">Fontenay-aux-Roses</p>
+              <p>Two months with the animal-research support team of the French institute for radiation protection and nuclear safety: full protective equipment, a contamination check at every exit, strict protocols for irradiated waste, autoclave sterilisation, and 15 to 40 metabolic cages rebuilt each week.</p>
+            </article>
+            <span class="tl__node" aria-hidden="true"></span>
+            <time class="tl__date">Jun – Aug 2024</time>
+          </li>
+
+          <li class="tl__item" data-side="down">
+            <article class="tl__card">
+              <span class="tl__type tl__type--project">Project</span>
+              <h3>Mycelium vs. plasterboard</h3>
+              <p class="tl__place">ESILV · 4th-year innovation project</p>
+              <p>Growing mycelium panels in 3D-printed moulds and testing them against BA13 for heat, fire and water.</p>
+              <button class="tl__open" type="button" data-open="sheet-1">Open project +</button>
+            </article>
+            <span class="tl__node" aria-hidden="true"></span>
+            <time class="tl__date">2025 – 26</time>
+          </li>
+
+          <li class="tl__item" data-side="up">
+            <article class="tl__card">
+              <span class="tl__type tl__type--project">Project</span>
+              <h3>CloudCaps on Kickstarter</h3>
+              <p class="tl__place">Paris</p>
+              <p>A 20-day campaign for an upcycled acetate bottle opener: 135&nbsp;% funded by 19 backers.</p>
+              <button class="tl__open" type="button" data-open="sheet-3">Open project +</button>
+            </article>
+            <span class="tl__node" aria-hidden="true"></span>
+            <time class="tl__date">Apr 2026</time>
+          </li>
+
+          <li class="tl__item" data-side="down">
+            <article class="tl__card">
+              <span class="tl__type">Experience</span>
+              <h3>Campus Cyber</h3>
+              <p class="tl__place">La Défense, Paris</p>
+              <p>Hands-on hardware foundations: a multi-sensor weather station, microdrone piloting and mechanics, and radio decoding with software-defined radio.</p>
+              <button class="tl__open" type="button" data-open="sheet-2">Weather station project +</button>
+            </article>
+            <span class="tl__node" aria-hidden="true"></span>
+            <time class="tl__date">Apr – Jun 2026</time>
+          </li>
+
+          <li class="tl__item" data-side="up">
+            <article class="tl__card">
+              <span class="tl__type tl__type--event">Event</span>
+              <h3>BreizhCTF</h3>
+              <p class="tl__place">Rennes</p>
+              <p>Helped run an exhibition stand presenting an open-source driver for the openpilot driver-assistance ecosystem, and the cybersecurity challenges of microdrones.</p>
+            </article>
+            <span class="tl__node" aria-hidden="true"></span>
+            <time class="tl__date">2026</time>
+          </li>
+
+          <li class="tl__item tl__item--next" data-side="down">
+            <article class="tl__card">
+              <span class="tl__type tl__type--next">Next</span>
+              <h3>Your team?</h3>
+              <p>A 5th-year engineering internship in telemetry, AI and embedded systems.</p>
+              <a class="tl__open" href="#contact">Get in touch ↓</a>
+            </article>
+            <span class="tl__node" aria-hidden="true"></span>
+            <time class="tl__date">Next</time>
+          </li>
+        </ol>
       </div>
-      <div class="page page--right">
-        <ul class="xp__list">
-          <li data-slide="right">
-            <span class="kicker">Paris · April – June 2026</span>
-            <h3>Campus Cyber</h3>
-            <p>Hands-on hardware foundations in La Défense: a multi-sensor weather station, microdrone piloting and mechanics, and radio decoding with software-defined radio.</p>
-          </li>
-          <li data-slide="right">
-            <span class="kicker">Fontenay-aux-Roses · June – August 2024</span>
-            <h3>IRSN — Research laboratory</h3>
-            <p>Two months with the animal-research support team of the French institute for radiation protection and nuclear safety. Full protective equipment and a contamination check at every exit, strict protocols for sorting irradiated waste, autoclave sterilisation, and 15 to 40 metabolic cages dismantled, washed and rebuilt each week.</p>
-          </li>
-          <li data-slide="right">
-            <span class="kicker">Rennes · 2026</span>
-            <h3>BreizhCTF</h3>
-            <p>Helped run an exhibition stand presenting an open-source driver for the openpilot driver-assistance ecosystem, and the cybersecurity challenges of microdrones.</p>
-          </li>
-        </ul>
-      </div>
+      <div class="tl__progress" aria-hidden="true"><span id="tlBar"></span></div>
     </section>
 
     <!-- ───────────── Contact ───────────── -->
     <section class="contact" id="contact">
+      <svg class="edge" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90V58c200-40 360 22 560 0s340-54 520-30 260 30 360 8V90Z"/></svg>
       <p class="kicker">Contact</p>
       <a class="contact__big" href="https://www.linkedin.com/in/maxime-vial-0b1971268/" target="_blank" rel="noopener">
         <span>Let's</span> <em>talk</em> <span class="contact__arrow" aria-hidden="true">↗</span>
@@ -154,17 +290,39 @@
 
   <!-- ═════════════ Project sheets (open on click) ═════════════ -->
 
-  <!-- Project 01 -->
-  <dialog class="sheet" id="sheet-1" aria-labelledby="sheet-1-title">
+  <!-- Project 01 · Mycelium -->
+  <dialog class="sheet sheet--myc" id="sheet-1" aria-labelledby="sheet-1-title">
     <button class="sheet__close" type="button" data-close>Close ✕</button>
-    <article class="spread">
-      <div class="page page--left">
+    <header class="cover">
+      <div class="cover__text">
         <p class="kicker" data-slide="left">Project 01 — Research paper</p>
         <h2 class="spread__title" id="sheet-1-title" data-slide="left">Can a mushroom replace a <em>plasterboard?</em></h2>
         <p class="spread__lede" data-slide="left">
           An experimental comparison of mycelium-based composites and the
           standard BA13 gypsum panel: thermal insulation, fire and water.
         </p>
+      </div>
+      <figure class="cover__anim" data-slide="right">
+        <div class="anim__stage anim__stage--myc">
+          <canvas id="mycAnim" role="img" aria-label="Animated 3D view of mycelium hyphae growing between substrate fragments inside a mould, then forming a skin and drying."></canvas>
+          <div class="anim__toggle" role="group" aria-label="Substrate">
+            <button type="button" data-substrate="wood" aria-pressed="true">Wood chips</button>
+            <button type="button" data-substrate="grain" aria-pressed="false">Grain</button>
+          </div>
+          <span class="anim__hint">Drag to rotate</span>
+        </div>
+        <div class="anim__steps" data-steps="myc">
+          <button type="button" data-step="0"><b>1</b>Fragment</button>
+          <button type="button" data-step="1"><b>2</b>Mould &amp; grow</button>
+          <button type="button" data-step="2"><b>3</b>Grow a skin</button>
+          <button type="button" data-step="3"><b>4</b>Dry at 60 °C</button>
+        </div>
+        <figcaption class="anim__caption" id="mycCaption" aria-live="polite"></figcaption>
+      </figure>
+    </header>
+
+    <article class="spread">
+      <div class="page page--left">
         <dl class="meta" data-slide="left">
           <div><dt>Context</dt><dd>Fourth-year innovation project at ESILV, 2025 – 26, in a pair with Paul Simonet</dd></div>
           <div><dt>Tools</dt><dd>3D-printed moulds, instrumented XPS hot box (XIAO ESP32-S3, KY-015 sensors), blowtorch and IR pyrometer, moisture meter</dd></div>
@@ -183,7 +341,7 @@
             protective fungal “skin”, then dried for six hours at 60&nbsp;°C.
             Each formulation was tested against BA13 for heat, fire and water.
           </p>
-          <p>
+          <p class="verdict">
             <strong>Verdict.</strong> Mycelium is not a like-for-like
             replacement: plaster stays non-combustible. But on grain it lost
             only 5.6&nbsp;% of its mass under the flame and kept its core at
@@ -197,16 +355,7 @@
             <a class="link" href="https://github.com/MaxVial/MyceliumBA13-Report" target="_blank" rel="noopener">Protocols &amp; data on GitHub <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <ol class="steps" data-slide="left">
-          <li><span>1</span>Fragment</li>
-          <li><span>2</span>Mould &amp; incubate</li>
-          <li><span>3</span>Unmould, grow skin</li>
-          <li><span>4</span>Dry at 60 °C</li>
-        </ol>
-      </div>
-
-      <div class="page page--right">
-        <div class="shot-pair" data-slide="right">
+        <div class="shot-pair" data-slide="left">
           <figure class="shot">
             <img src="assets/img/mycelium-samples.jpg" alt="Two mycelium blocks: a crumbly wood-chip sample and a dense one covered in white fungal skin." loading="lazy">
             <figcaption class="kicker">Samples on wood substrate</figcaption>
@@ -216,6 +365,9 @@
             <figcaption class="kicker">After the flame test, BA13 on the left</figcaption>
           </figure>
         </div>
+      </div>
+
+      <div class="page page--right">
         <figure class="chart" data-slide="right">
           <figcaption class="kicker">Fig. 1 — Fire test: temperature of the unexposed face (°C)</figcaption>
           <svg id="fireChart" viewBox="0 0 560 320" role="img" aria-label="Line chart of the temperature behind each sample during and after 60 seconds of blowtorch exposure. Plasterboard peaks at 76.6 degrees, wood-chip mycelium stays under 45 degrees, grain mycelium peaks at 57 degrees and drops quickly."></svg>
@@ -235,17 +387,32 @@
     </article>
   </dialog>
 
-  <!-- Project 02 -->
-  <dialog class="sheet" id="sheet-2" aria-labelledby="sheet-2-title">
+  <!-- Project 02 · Weather station -->
+  <dialog class="sheet sheet--radio" id="sheet-2" aria-labelledby="sheet-2-title">
     <button class="sheet__close" type="button" data-close>Close ✕</button>
-    <article class="spread">
-      <div class="page page--left">
+    <header class="cover">
+      <div class="cover__text">
         <p class="kicker" data-slide="left">Project 02 — Internship, Paris · Campus Cyber</p>
         <h2 class="spread__title" id="sheet-2-title" data-slide="left">Reading the weather <em>by radio</em></h2>
         <p class="spread__lede" data-slide="left">
           Mounting, pairing and maintaining a multi-sensor Ecowitt weather
           station — then intercepting its own radio frames with a USB dongle.
         </p>
+      </div>
+      <figure class="cover__anim" data-slide="right">
+        <div class="anim__stage anim__stage--radio">
+          <svg id="radioAnim" viewBox="0 0 600 400" role="img" aria-label="Animation: the outdoor sensor array broadcasts a radio frame. The gateway receives it and forwards it over Wi-Fi to the app. At the same time an RTL-SDR dongle on a laptop captures the same frame and decodes its fields."></svg>
+        </div>
+        <figcaption class="anim__caption anim__caption--static">
+          One broadcast, two listeners: the gateway that is meant to hear it,
+          and an SDR dongle that anyone nearby could plug in. Frame contents
+          shown here are illustrative.
+        </figcaption>
+      </figure>
+    </header>
+
+    <article class="spread">
+      <div class="page page--left">
         <div class="prose" data-slide="left">
           <p>
             One of the first assignments of my internship at Campus Cyber:
@@ -291,18 +458,33 @@
     </article>
   </dialog>
 
-
-  <!-- Project 03 -->
-  <dialog class="sheet" id="sheet-4" aria-labelledby="sheet-4-title">
+  <!-- Project 03 · CloudCaps -->
+  <dialog class="sheet sheet--acetate" id="sheet-3" aria-labelledby="sheet-3-title">
     <button class="sheet__close" type="button" data-close>Close ✕</button>
-    <article class="spread">
-      <div class="page page--left">
+    <header class="cover">
+      <div class="cover__text">
         <p class="kicker" data-slide="left">Project 03 — Product design · Kickstarter</p>
-        <h2 class="spread__title" id="sheet-4-title" data-slide="left">Cloud<em>Caps</em></h2>
+        <h2 class="spread__title" id="sheet-3-title" data-slide="left">Cloud<em>Caps</em></h2>
         <p class="spread__lede" data-slide="left">
           A cloud-shaped bottle opener, CNC-machined from reclaimed eyewear
           acetate and funded on Kickstarter.
         </p>
+      </div>
+      <figure class="cover__anim" data-slide="right">
+        <div class="anim__stage anim__stage--cnc">
+          <svg id="cncAnim" viewBox="0 0 600 400" role="img" aria-label="Animation: a CNC tool cuts the insert hole and the cloud outline out of a patterned acetate sheet, the piece lifts out and a metal opener insert is screwed in."></svg>
+        </div>
+        <div class="anim__steps anim__steps--three" data-steps="cnc">
+          <button type="button" data-step="0"><b>1</b>Reclaimed sheet</button>
+          <button type="button" data-step="1"><b>2</b>CNC cut</button>
+          <button type="button" data-step="2"><b>3</b>Insert screwed in</button>
+        </div>
+        <figcaption class="anim__caption" id="cncCaption" aria-live="polite"></figcaption>
+      </figure>
+    </header>
+
+    <article class="spread">
+      <div class="page page--left">
         <dl class="meta" data-slide="left">
           <div><dt>Team</dt><dd>Three classmates, from design and prototyping to the campaign and production</dd></div>
           <div><dt>Tools</dt><dd>SolidWorks, CNC machining, reclaimed cellulose acetate, metal opener insert, Kickstarter</dd></div>
@@ -321,12 +503,23 @@
             opener insert. Several prototypes came before a Quickstarter
             campaign, with photos and a promo video we made ourselves.
           </p>
-          <p>
+          <p class="verdict">
             <strong>Outcome.</strong> 135&nbsp;% funded. The run is being made
             this autumn, with deliveries planned for December.
           </p>
           <a class="link" href="https://www.kickstarter.com/projects/ps75/cloudcaps-bottle-opener-quickstarter" target="_blank" rel="noopener">See the Kickstarter campaign <span aria-hidden="true">↗</span></a>
         </div>
+        <div class="funded" data-slide="left">
+          <span class="kicker">Funded</span>
+          <p class="funded__big"><b data-count="135" data-dec="0">0</b><sup>%</sup></p>
+          <div class="funded__bar"><span></span></div>
+          <p class="funded__note">€338 pledged on a €250 goal</p>
+        </div>
+        <dl class="stats stats--row" data-slide="left">
+          <div><dt>Backers</dt><dd><b data-count="19" data-dec="0">0</b></dd></div>
+          <div><dt>Campaign</dt><dd><b data-count="20" data-dec="0">0</b> days<small>2 – 22 April 2026</small></dd></div>
+          <div><dt>Material</dt><dd class="stats__text">Upcycled acetate</dd></div>
+        </dl>
       </div>
 
       <div class="page page--right">
@@ -340,21 +533,10 @@
           <figure class="shot"><img src="assets/img/acetate-sheets.jpg" alt="Close-up of two reclaimed acetate sheets with confetti patterns." loading="lazy"><figcaption class="kicker">Reclaimed acetate sheets</figcaption></figure>
           <figure class="shot"><img src="assets/img/cloudcaps-bottle.jpg" alt="The opener next to a glass soda bottle and its cap." loading="lazy"><figcaption class="kicker">With its bottle</figcaption></figure>
         </div>
-        <div class="funded" data-slide="right">
-          <span class="kicker">Funded</span>
-          <p class="funded__big"><b data-count="135" data-dec="0">0</b><sup>%</sup></p>
-          <div class="funded__bar"><span></span></div>
-          <p class="funded__note">€338 pledged on a €250 goal</p>
-        </div>
-        <dl class="stats stats--row" data-slide="right">
-          <div><dt>Backers</dt><dd><b data-count="19" data-dec="0">0</b></dd></div>
-          <div><dt>Campaign</dt><dd><b data-count="20" data-dec="0">0</b> days<small>2 – 22 April 2026</small></dd></div>
-          <div><dt>Material</dt><dd class="stats__text">Upcycled acetate</dd></div>
-        </dl>
       </div>
     </article>
   </dialog>
 
-  <script src="main.js?v=4"></script>
+  <script src="main.js?v=6"></script>
 </body>
 </html>
