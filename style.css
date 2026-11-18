@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────────
-   Maxime Vial — Portfolio
+   Maxime Vial · Portfolio
    Newspaper / book layout with a strict middle spine.
    ───────────────────────────────────────────── */
 
@@ -370,6 +370,14 @@ code { font-family: var(--mono); font-size: 0.88em; }
 .skill__ico { width: 26px; height: 26px; fill: none; stroke: var(--glow); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
 .skill h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(20px, 1.6vw, 26px); line-height: 1.05; }
 .skill h3 em { color: var(--glow); }
+.skill__main {
+  font-family: var(--serif); font-size: clamp(30px, 2.5vw, 40px);
+  line-height: 1; color: var(--glow);
+  padding: 4px 0 12px;
+  border-bottom: 1px solid rgba(198, 238, 108, 0.3);
+}
+.skill__main .kicker { display: block; margin-bottom: 8px; font-size: 10px; color: #a9b78f; }
+.skill__main small { display: block; margin-top: 6px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em; color: var(--cream); opacity: 0.75; }
 .chips { display: flex; flex-wrap: wrap; gap: 5px; }
 .chips li {
   padding: 3px 9px;
@@ -671,6 +679,17 @@ html.is-locked { overflow: hidden; }
   text-wrap: balance;
 }
 .spread__title em { color: var(--accent); }
+.cover__cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 22px; padding: 11px 16px;
+  background: var(--c-accent); color: var(--c-bg);
+  border-radius: 999px;
+  font-family: var(--mono); font-size: 12px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.cover__cta:hover, .cover__cta:focus-visible { background: var(--c-ink); }
 .spread__lede {
   font-family: var(--serif);
   font-size: clamp(21px, 1.9vw, 30px);
@@ -773,11 +792,6 @@ html.is-locked { overflow: hidden; }
   margin: 18px 0 28px;
   cursor: default;
 }
-.contact__arrow { /* points down to the ways to get in touch */
-  display: inline-block; font-size: 0.5em;
-  animation: nudge 2.4s var(--ease) infinite;
-}
-@keyframes nudge { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(0.14em, 0.14em); } }
 .contact__sub {
   display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 0;
   font-family: var(--mono); font-size: clamp(13px, 1.2vw, 16px); letter-spacing: 0.06em;

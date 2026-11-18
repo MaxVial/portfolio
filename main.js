@@ -1,4 +1,4 @@
-/* Maxime Vial — Portfolio
+/* Maxime Vial · Portfolio
    Vanilla JS, no dependencies.
    1. Hero canvas: mycelium network x radio waves
    2. Scroll progress bar
@@ -360,7 +360,7 @@
 
     // peak annotation for BA13 (76.6 °C at 75 s)
     add("circle", { cx: X(75), cy: Y(76.6), r: 3.5, fill: "var(--ink)" });
-    add("text", { x: X(75) + 8, y: Y(76.6) - 4 }, "76.6° — 15 s after flame-off");
+    add("text", { x: X(75) + 8, y: Y(76.6) - 4 }, "76.6°, 15 s after flame-off");
   }
 
   /* ───────── 5. Process animations inside the project sheets ─────────
